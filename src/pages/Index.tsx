@@ -47,19 +47,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero text-neutral-light animate-gradient-shift bg-[length:400%_400%]">
+    <div className="min-h-screen bg-background text-foreground">
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-hero font-bold mb-6 animate-fade-in bg-gradient-cosmic bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
               Scale Your Business to{" "}
-              <span className="text-electric-cyan animate-glow-pulse">₹1 CR/Month</span>{" "}
+              <span className="text-primary">₹1 CR/Month</span>{" "}
               with Our Proven Framework
             </h1>
-            <p className="text-xl mb-8 text-neutral-light/90 leading-relaxed animate-slide-up">
+            <p className="text-xl mb-8 text-muted-foreground leading-relaxed">
               Join 500+ coaches, consultants, and service-based businesses who've transformed their revenue using our data-driven growth systems. Get your custom roadmap to predictable, sustainable scaling.
             </p>
             
@@ -67,14 +67,14 @@ const Index = () => {
               <img 
                 src={heroTeam} 
                 alt="Strux Digital Team - Performance Marketing Experts" 
-                className="mx-auto rounded-lg shadow-glass max-w-2xl w-full animate-fade-in border border-electric-cyan/20 hover:border-electric-cyan/50 transition-all duration-300"
+                className="mx-auto rounded-lg shadow-card max-w-2xl w-full animate-fade-in border border-border hover:border-primary/50 transition-all duration-300"
               />
             </div>
             
             <Button variant="hero" size="xl" onClick={scrollToForm} className="mb-4">
               Let's Discuss Your Growth
             </Button>
-            <p className="text-sm text-neutral-light/70">
+            <p className="text-sm text-muted-foreground">
               Free consultation • Custom growth plan • No obligations
             </p>
           </div>
@@ -82,11 +82,11 @@ const Index = () => {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-16 bg-neutral-light">
+      <section className="py-16 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-section font-bold text-space-dark mb-4">What We Do</h2>
-            <p className="text-lg text-space-dark/80 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-card-foreground mb-4">What We Do</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We specialize in scaling service-based businesses through proven digital marketing frameworks and automation systems.
             </p>
           </div>
@@ -123,18 +123,13 @@ const Index = () => {
       </section>
 
       {/* Partnership Value Stack */}
-      <section className="py-16 bg-space-dark relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-cosmic opacity-20 animate-gradient-shift bg-[length:400%_400%]"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-section font-bold text-neutral-light mb-4">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
               Here's What You Get When You Partner With Us...
             </h2>
-            <p className="text-lg text-neutral-light/80 max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Everything you need to scale your business systematically and predictably to ₹1CR/month and beyond.
             </p>
           </div>
@@ -181,11 +176,11 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-neutral-light">
+      <section className="py-16 bg-card">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-section font-bold text-space-dark mb-4">Why Choose Strux Digital?</h2>
-            <p className="text-lg text-space-dark/80 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-card-foreground mb-4">Why Choose Strux Digital?</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We're not just another marketing agency. We're your growth partners, committed to your long-term success.
             </p>
           </div>
@@ -212,7 +207,6 @@ const Index = () => {
               <p className="text-space-dark/80">Every decision backed by real data and proven metrics</p>
             </div>
           </div>
-          
           <div className="text-center">
             <Button variant="cta-secondary" size="lg" onClick={scrollToForm}>
               Fill Out This Form to Unlock Your Business Potential
@@ -222,50 +216,45 @@ const Index = () => {
       </section>
 
       {/* Challenges Section */}
-      <section className="py-16 bg-space-dark relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-gradient-purple opacity-30 animate-gradient-shift bg-[length:400%_400%]"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-16 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-section font-bold text-neutral-light mb-4">Facing These Challenges?</h2>
-            <p className="text-lg text-neutral-light/80 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-card-foreground mb-4">Facing These Challenges?</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               These are the most common roadblocks that prevent businesses from scaling to ₹1CR/month. Sound familiar?
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 max-w-6xl mx-auto">
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-electric-cyan hover:border-bright-mint transition-all duration-300">
-              <AlertTriangle className="w-8 h-8 text-electric-cyan mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Scaling ads effectively</h3>
-              <p className="text-space-dark/80">Your ad costs keep increasing but leads quality is decreasing</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <AlertTriangle className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Scaling ads effectively</h3>
+              <p className="text-muted-foreground">Your ad costs keep increasing but leads quality is decreasing</p>
             </div>
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-neon-purple hover:border-bright-mint transition-all duration-300">
-              <Settings className="w-8 h-8 text-neon-purple mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Wrong funnel strategy</h3>
-              <p className="text-space-dark/80">Your funnel converts visitors but fails to generate enough revenue</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <Settings className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Wrong funnel strategy</h3>
+              <p className="text-muted-foreground">Your funnel converts visitors but fails to generate enough revenue</p>
             </div>
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-bright-mint hover:border-electric-cyan transition-all duration-300">
-              <Users className="w-8 h-8 text-bright-mint mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Inconsistent client flow</h3>
-              <p className="text-space-dark/80">Great months followed by dry spells - no predictable lead generation</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <Users className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Inconsistent client flow</h3>
+              <p className="text-muted-foreground">Great months followed by dry spells - no predictable lead generation</p>
             </div>
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-electric-cyan hover:border-neon-purple transition-all duration-300">
-              <BrainCircuit className="w-8 h-8 text-electric-cyan mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Tech overwhelm</h3>
-              <p className="text-space-dark/80">Too many tools, platforms, and systems that don't work together</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <BrainCircuit className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Tech overwhelm</h3>
+              <p className="text-muted-foreground">Too many tools, platforms, and systems that don't work together</p>
             </div>
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-neon-purple hover:border-bright-mint transition-all duration-300">
-              <TrendingUp className="w-8 h-8 text-neon-purple mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Revenue ceiling</h3>
-              <p className="text-space-dark/80">Stuck at the same revenue level despite working harder</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <TrendingUp className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Revenue ceiling</h3>
+              <p className="text-muted-foreground">Stuck at the same revenue level despite working harder</p>
             </div>
-            <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border-l-4 border-bright-mint hover:border-electric-cyan transition-all duration-300">
-              <Clock className="w-8 h-8 text-bright-mint mb-4" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Time constraints</h3>
-              <p className="text-space-dark/80">No time to focus on marketing while running your business</p>
+            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
+              <Clock className="w-8 h-8 text-primary mb-4" />
+              <h3 className="text-lg font-bold text-foreground mb-2">Time constraints</h3>
+              <p className="text-muted-foreground">No time to focus on marketing while running your business</p>
             </div>
           </div>
           
@@ -276,12 +265,13 @@ const Index = () => {
           </div>
         </div>
       </section>
+
       {/* Testimonials Section */}
-      <section className="py-16 bg-neutral-light">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-section font-bold text-space-dark mb-4">Success Stories</h2>
-            <p className="text-lg text-space-dark/80 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Success Stories</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Real results from real clients who've transformed their businesses with our proven systems.
             </p>
           </div>

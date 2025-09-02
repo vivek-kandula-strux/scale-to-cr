@@ -8,14 +8,14 @@ interface BenefitCardProps {
 
 const BenefitCard = ({ icon: Icon, title, description }: BenefitCardProps) => {
   return (
-    <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass hover:shadow-purple transition-all duration-300 group border border-glass-white/20 hover:border-neon-purple/50">
+    <div className="bg-card p-6 rounded-lg border border-border hover:border-primary/50 hover:shadow-glow transition-all duration-300 group">
       <div className="flex items-start space-x-4">
-        <div className="p-2 bg-gradient-purple rounded-lg group-hover:animate-float">
-          <Icon className="w-6 h-6 text-neutral-light" />
+        <div className="p-2 bg-primary rounded-lg group-hover:shadow-glow transition-all duration-300">
+          <Icon className="w-6 h-6 text-primary-foreground" />
         </div>
         <div className="flex-1">
-          <h4 className="text-lg font-semibold text-space-dark mb-2">{title}</h4>
-          <p className="text-space-dark/80 leading-relaxed">{description}</p>
+          <h4 className="text-lg font-semibold text-card-foreground mb-2">{title}</h4>
+          <p className="text-muted-foreground leading-relaxed">{description}</p>
         </div>
       </div>
     </div>

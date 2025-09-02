@@ -54,12 +54,12 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="bg-gradient-glass backdrop-blur-glass p-8 rounded-lg shadow-glass max-w-2xl mx-auto border border-glass-white/20 hover:border-electric-cyan/30 transition-all duration-300">
+    <div className="bg-card p-8 rounded-lg shadow-card max-w-2xl mx-auto border border-border hover:border-primary/30 transition-all duration-300">
       <div className="text-center mb-8">
-        <h3 className="text-section font-bold text-space-dark mb-2 bg-gradient-cosmic bg-clip-text text-transparent">
+        <h3 className="text-3xl font-bold text-card-foreground mb-2">
           Get Your Custom Growth Plan
         </h3>
-        <p className="text-space-dark/70">
+        <p className="text-muted-foreground">
           Tell us about your business and we'll create a personalized roadmap to ₹1CR/month
         </p>
       </div>
@@ -68,7 +68,7 @@ const LeadForm = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-space-dark font-semibold">
+            <Label htmlFor="name" className="text-card-foreground font-semibold">
               Full Name *
             </Label>
             <Input
@@ -76,14 +76,14 @@ const LeadForm = () => {
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Enter your full name"
-              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
               required
             />
           </div>
 
           {/* Email */}
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-space-dark font-semibold">
+            <Label htmlFor="email" className="text-card-foreground font-semibold">
               Email Address *
             </Label>
             <Input
@@ -92,7 +92,7 @@ const LeadForm = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               placeholder="your@email.com"
-              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
               required
             />
           </div>

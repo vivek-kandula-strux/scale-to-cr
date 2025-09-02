@@ -19,10 +19,10 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         
-        /* Futuristic Variants */
-        cta: "bg-gradient-neon text-space-dark hover:shadow-neon font-bold uppercase tracking-wide transform hover:scale-105 transition-all duration-300 border border-electric-cyan/30 hover:border-electric-cyan",
-        "cta-secondary": "bg-glass-white/10 text-electric-cyan border-2 border-electric-cyan/50 hover:bg-electric-cyan hover:text-space-dark shadow-glass backdrop-blur-glass font-semibold transition-all duration-300",
-        hero: "bg-gradient-cosmic text-neutral-light hover:shadow-purple font-bold text-lg transform hover:scale-105 transition-all duration-300 shadow-neon animate-glow-pulse bg-[length:400%_400%] animate-gradient-shift",
+        /* Modern Professional Variants */
+        cta: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-glow font-semibold transition-all duration-300",
+        "cta-secondary": "border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+        hero: "bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg hover:shadow-glow transition-all duration-300",
       },
       size: {
         default: "h-10 px-4 py-2",
