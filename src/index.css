@@ -2,41 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Strux Digital Performance Marketing Design System
+High-converting, speed-optimized color palette
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Performance Marketing Color Scheme */
+    --deep-brown: 21 97% 6%;           /* #210A03 - Primary dark background */
+    --forest-green: 134 55% 37%;       /* #2A9343 - Primary CTA color */
+    --bright-green: 110 60% 30%;       /* #3A931B - Secondary CTA/hover */
+    --soft-peach: 24 78% 91%;          /* #FCDED5 - Text on dark, cards background */
+    
+    /* Semantic Tokens */
+    --background: var(--deep-brown);
+    --foreground: var(--soft-peach);
+    
+    --card: var(--soft-peach);
+    --card-foreground: var(--deep-brown);
+    
+    --popover: var(--soft-peach);
+    --popover-foreground: var(--deep-brown);
+    
+    --primary: var(--forest-green);
+    --primary-foreground: var(--soft-peach);
+    
+    --secondary: var(--soft-peach);
+    --secondary-foreground: var(--deep-brown);
+    
+    --muted: 21 97% 12%;               /* Slightly lighter deep brown */
+    --muted-foreground: 24 30% 70%;    /* Muted peach */
+    
+    --accent: var(--bright-green);
+    --accent-foreground: var(--soft-peach);
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: var(--soft-peach);
+    
+    --border: var(--muted);
+    --input: var(--muted);
+    --ring: var(--forest-green);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Performance Marketing Specific Tokens */
+    --hero-bg: var(--deep-brown);
+    --cta-primary: var(--forest-green);
+    --cta-hover: var(--bright-green);
+    --section-bg: var(--soft-peach);
+    --text-on-dark: var(--soft-peach);
+    --text-on-light: var(--deep-brown);
+    
+    /* Gradients for visual appeal */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-brown)), hsl(21 97% 8%));
+    --gradient-cta: linear-gradient(135deg, hsl(var(--forest-green)), hsl(var(--bright-green)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--soft-peach)), hsl(24 78% 88%));
+    
+    /* Shadows for depth */
+    --shadow-card: 0 4px 20px hsl(var(--deep-brown) / 0.1);
+    --shadow-cta: 0 6px 25px hsl(var(--forest-green) / 0.3);
+    --shadow-elevated: 0 10px 40px hsl(var(--deep-brown) / 0.15);
+    
+    /* Typography scale */
+    --font-hero: 3.5rem;
+    --font-section-title: 2.5rem;
+    --font-card-title: 1.5rem;
+    --font-body: 1rem;
+    
+    /* Transitions for smooth interactions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
