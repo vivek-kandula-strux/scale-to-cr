@@ -10,27 +10,7 @@ import LeadForm from "@/components/LeadForm";
 import FAQAccordion from "@/components/FAQAccordion";
 
 // Lucide Icons
-import { 
-  Target, 
-  Zap, 
-  TrendingUp, 
-  CheckCircle, 
-  Users, 
-  BarChart3, 
-  Shield, 
-  Rocket,
-  DollarSign,
-  Clock,
-  Award,
-  HeadphonesIcon,
-  PieChart,
-  Settings,
-  AlertTriangle,
-  BrainCircuit,
-  Smartphone,
-  Globe,
-  PlayCircle
-} from "lucide-react";
+import { Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, Shield, Rocket, DollarSign, Clock, Award, HeadphonesIcon, PieChart, Settings, AlertTriangle, BrainCircuit, Smartphone, Globe, PlayCircle } from "lucide-react";
 
 // Images
 import heroTeam from "@/assets/hero-team.jpg";
@@ -38,37 +18,29 @@ import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
-
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
-
   const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    formRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-background text-foreground">
+  return <div className="min-h-screen bg-background text-foreground">
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="md:text-6xl font-bold mb-6 animate-fade-in text-3xl">
               Scale Your Business to{" "}
               <span className="text-primary">₹1 CR/Month</span>{" "}
               with Our Proven Framework
             </h1>
-            <p className="text-xl mb-8 text-muted-foreground leading-relaxed">
-              Join 500+ coaches, consultants, and service-based businesses who've transformed their revenue using our data-driven growth systems. Get your custom roadmap to predictable, sustainable scaling.
-            </p>
+            <p className="mb-8 text-muted-foreground leading-relaxed text-base">Join 50+ coaches & edtech founders who've transformed their revenue using our data-driven growth systems & Paid Advertising. Get your custom roadmap to predictable, sustainable scaling.</p>
             
             <div className="mb-12">
-              <img 
-                src={heroTeam} 
-                alt="Strux Digital Team - Performance Marketing Experts" 
-                className="mx-auto rounded-lg shadow-card max-w-2xl w-full animate-fade-in border border-border hover:border-primary/50 transition-all duration-300"
-              />
+              <img src={heroTeam} alt="Strux Digital Team - Performance Marketing Experts" className="mx-auto rounded-lg shadow-card max-w-2xl w-full animate-fade-in border border-border hover:border-primary/50 transition-all duration-300" />
             </div>
             
             <Button variant="hero" size="xl" onClick={scrollToForm} className="mb-4">
@@ -92,26 +64,10 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <ServiceCard 
-              icon={Target}
-              title="Paid Ads Management"
-              description="High-converting ad campaigns across Google, Facebook, and LinkedIn that consistently generate qualified leads at scale."
-            />
-            <ServiceCard 
-              icon={Zap}
-              title="Funnel Automation"
-              description="Complete sales funnel setup with automated nurturing sequences that convert prospects into paying clients 24/7."
-            />
-            <ServiceCard 
-              icon={TrendingUp}
-              title="Scaling Roadmaps"
-              description="Custom growth strategies tailored to your business model, with clear milestones from current revenue to ₹1CR/month."
-            />
-            <ServiceCard 
-              icon={BarChart3}
-              title="Proven Frameworks"
-              description="Battle-tested systems and processes that have generated over ₹100CR in revenue for our clients across industries."
-            />
+            <ServiceCard icon={Target} title="Paid Ads Management" description="High-converting ad campaigns across Google, Facebook, and LinkedIn that consistently generate qualified leads at scale." />
+            <ServiceCard icon={Zap} title="Funnel Automation" description="Complete sales funnel setup with automated nurturing sequences that convert prospects into paying clients 24/7." />
+            <ServiceCard icon={TrendingUp} title="Scaling Roadmaps" description="Custom growth strategies tailored to your business model, with clear milestones from current revenue to ₹1CR/month." />
+            <ServiceCard icon={BarChart3} title="Proven Frameworks" description="Battle-tested systems and processes that have generated over ₹100CR in revenue for our clients across industries." />
           </div>
           
           <div className="text-center">
@@ -135,36 +91,12 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-            <BenefitCard 
-              icon={Users}
-              title="Dedicated Account Manager"
-              description="Your personal growth strategist who knows your business inside-out and ensures every campaign is optimized for maximum ROI."
-            />
-            <BenefitCard 
-              icon={Rocket}
-              title="Custom Sales Funnels"
-              description="High-converting landing pages, email sequences, and sales processes designed specifically for your business model."
-            />
-            <BenefitCard 
-              icon={BarChart3}
-              title="Real-Time Analytics Dashboard"
-              description="Complete visibility into your marketing performance with detailed reporting and actionable insights delivered weekly."
-            />
-            <BenefitCard 
-              icon={Shield}
-              title="90-Day ROI Guarantee"
-              description="We guarantee minimum 3x return on ad spend within 90 days, or we work for free until you achieve it."
-            />
-            <BenefitCard 
-              icon={CheckCircle}
-              title="Proven Growth Playbooks"
-              description="Step-by-step systems that have consistently helped businesses scale from 6-figures to 8-figures annually."
-            />
-            <BenefitCard 
-              icon={HeadphonesIcon}
-              title="Priority Support Access"
-              description="Direct access to our team via Slack for immediate support and strategic guidance whenever you need it."
-            />
+            <BenefitCard icon={Users} title="Dedicated Account Manager" description="Your personal growth strategist who knows your business inside-out and ensures every campaign is optimized for maximum ROI." />
+            <BenefitCard icon={Rocket} title="Custom Sales Funnels" description="High-converting landing pages, email sequences, and sales processes designed specifically for your business model." />
+            <BenefitCard icon={BarChart3} title="Real-Time Analytics Dashboard" description="Complete visibility into your marketing performance with detailed reporting and actionable insights delivered weekly." />
+            <BenefitCard icon={Shield} title="90-Day ROI Guarantee" description="We guarantee minimum 3x return on ad spend within 90 days, or we work for free until you achieve it." />
+            <BenefitCard icon={CheckCircle} title="Proven Growth Playbooks" description="Step-by-step systems that have consistently helped businesses scale from 6-figures to 8-figures annually." />
+            <BenefitCard icon={HeadphonesIcon} title="Priority Support Access" description="Direct access to our team via Slack for immediate support and strategic guidance whenever you need it." />
           </div>
           
           <div className="text-center">
@@ -277,20 +209,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <TestimonialCard 
-              image={testimonial1}
-              name="Rajesh Kumar"
-              business="Digital Marketing Coach"
-              result="₹2L → ₹75L/month"
-              testimonial="Strux Digital completely transformed my coaching business. Their funnel strategy and ad management helped me scale from ₹2 lakhs to ₹75 lakhs per month in just 8 months. The ROI has been incredible!"
-            />
-            <TestimonialCard 
-              image={testimonial2}
-              name="Priya Sharma" 
-              business="Business Consultant"
-              result="₹5L → ₹1.2CR/month"
-              testimonial="I was struggling to break through the ₹5 lakh ceiling for years. With their custom growth roadmap and automation systems, I achieved ₹1.2 CR monthly revenue in 6 months. Best investment ever!"
-            />
+            <TestimonialCard image={testimonial1} name="Rajesh Kumar" business="Digital Marketing Coach" result="₹2L → ₹75L/month" testimonial="Strux Digital completely transformed my coaching business. Their funnel strategy and ad management helped me scale from ₹2 lakhs to ₹75 lakhs per month in just 8 months. The ROI has been incredible!" />
+            <TestimonialCard image={testimonial2} name="Priya Sharma" business="Business Consultant" result="₹5L → ₹1.2CR/month" testimonial="I was struggling to break through the ₹5 lakh ceiling for years. With their custom growth roadmap and automation systems, I achieved ₹1.2 CR monthly revenue in 6 months. Best investment ever!" />
             <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass border border-glass-white/20 hover:border-electric-cyan/50 transition-all duration-300">
               <div className="flex items-center justify-center mb-4">
                 <PlayCircle className="w-12 h-12 text-electric-cyan animate-glow-pulse" />
@@ -340,24 +260,8 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <CaseStudyCard 
-              image={caseStudy1}
-              clientName="Success Coaching Academy"
-              industry="Online Coaching"
-              beforeRevenue="₹8L"
-              afterRevenue="₹85L"
-              timeframe="7 months"
-              story="Struggled with inconsistent lead flow despite good content. We implemented our proven funnel system and scaled their Facebook ads, resulting in 10x revenue growth."
-            />
-            <CaseStudyCard 
-              image={caseStudy2}
-              clientName="Digital Growth Consultancy"
-              industry="Business Consulting"
-              beforeRevenue="₹15L"
-              afterRevenue="₹1.8CR"
-              timeframe="10 months"
-              story="Had a proven service but couldn't scale effectively. Our automation systems and strategic ad campaigns helped them achieve sustainable growth to 8-figures."
-            />
+            <CaseStudyCard image={caseStudy1} clientName="Success Coaching Academy" industry="Online Coaching" beforeRevenue="₹8L" afterRevenue="₹85L" timeframe="7 months" story="Struggled with inconsistent lead flow despite good content. We implemented our proven funnel system and scaled their Facebook ads, resulting in 10x revenue growth." />
+            <CaseStudyCard image={caseStudy2} clientName="Digital Growth Consultancy" industry="Business Consulting" beforeRevenue="₹15L" afterRevenue="₹1.8CR" timeframe="10 months" story="Had a proven service but couldn't scale effectively. Our automation systems and strategic ad campaigns helped them achieve sustainable growth to 8-figures." />
             <div className="bg-gradient-glass backdrop-blur-glass p-6 rounded-lg shadow-glass flex flex-col justify-between border border-glass-white/20 hover:border-electric-cyan/30 transition-all duration-300">
               <div>
                 <h4 className="text-card-title font-bold text-space-dark mb-2">Your Business Could Be Next</h4>
@@ -472,8 +376,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
