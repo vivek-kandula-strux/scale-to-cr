@@ -54,12 +54,12 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="bg-gradient-card p-8 rounded-lg shadow-elevated max-w-2xl mx-auto">
+    <div className="bg-gradient-glass backdrop-blur-glass p-8 rounded-lg shadow-glass max-w-2xl mx-auto border border-glass-white/20 hover:border-electric-cyan/30 transition-all duration-300">
       <div className="text-center mb-8">
-        <h3 className="text-section font-bold text-deep-brown mb-2">
+        <h3 className="text-section font-bold text-space-dark mb-2 bg-gradient-cosmic bg-clip-text text-transparent">
           Get Your Custom Growth Plan
         </h3>
-        <p className="text-deep-brown/70">
+        <p className="text-space-dark/70">
           Tell us about your business and we'll create a personalized roadmap to ₹1CR/month
         </p>
       </div>
@@ -68,7 +68,7 @@ const LeadForm = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-deep-brown font-semibold">
+            <Label htmlFor="name" className="text-space-dark font-semibold">
               Full Name *
             </Label>
             <Input
@@ -76,14 +76,14 @@ const LeadForm = () => {
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Enter your full name"
-              className="bg-soft-peach border-forest-green/20 focus:border-forest-green"
+              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
               required
             />
           </div>
 
           {/* Email */}
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-deep-brown font-semibold">
+            <Label htmlFor="email" className="text-space-dark font-semibold">
               Email Address *
             </Label>
             <Input
@@ -92,14 +92,14 @@ const LeadForm = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               placeholder="your@email.com"
-              className="bg-soft-peach border-forest-green/20 focus:border-forest-green"
+              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
               required
             />
           </div>
 
           {/* Phone */}
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-deep-brown font-semibold">
+            <Label htmlFor="phone" className="text-space-dark font-semibold">
               Phone Number *
             </Label>
             <Input
@@ -108,18 +108,18 @@ const LeadForm = () => {
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
               placeholder="+91 9876543210"
-              className="bg-soft-peach border-forest-green/20 focus:border-forest-green"
+              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
               required
             />
           </div>
 
           {/* Business Type */}
           <div className="space-y-2">
-            <Label htmlFor="businessType" className="text-deep-brown font-semibold">
+            <Label htmlFor="businessType" className="text-space-dark font-semibold">
               Business Type
             </Label>
             <Select onValueChange={(value) => handleChange("businessType", value)}>
-              <SelectTrigger className="bg-soft-peach border-forest-green/20 focus:border-forest-green">
+              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
                 <SelectValue placeholder="Select your business type" />
               </SelectTrigger>
               <SelectContent>
@@ -135,11 +135,11 @@ const LeadForm = () => {
 
           {/* Current Revenue */}
           <div className="space-y-2">
-            <Label htmlFor="currentRevenue" className="text-deep-brown font-semibold">
+            <Label htmlFor="currentRevenue" className="text-space-dark font-semibold">
               Current Monthly Revenue
             </Label>
             <Select onValueChange={(value) => handleChange("currentRevenue", value)}>
-              <SelectTrigger className="bg-soft-peach border-forest-green/20 focus:border-forest-green">
+              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
                 <SelectValue placeholder="Select current revenue" />
               </SelectTrigger>
               <SelectContent>
@@ -155,11 +155,11 @@ const LeadForm = () => {
 
           {/* Desired Revenue */}
           <div className="space-y-2">
-            <Label htmlFor="desiredRevenue" className="text-deep-brown font-semibold">
+            <Label htmlFor="desiredRevenue" className="text-space-dark font-semibold">
               Desired Monthly Revenue
             </Label>
             <Select onValueChange={(value) => handleChange("desiredRevenue", value)}>
-              <SelectTrigger className="bg-soft-peach border-forest-green/20 focus:border-forest-green">
+              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
                 <SelectValue placeholder="Select target revenue" />
               </SelectTrigger>
               <SelectContent>
@@ -175,7 +175,7 @@ const LeadForm = () => {
 
         {/* Challenge */}
         <div className="space-y-2">
-          <Label htmlFor="challenge" className="text-deep-brown font-semibold">
+          <Label htmlFor="challenge" className="text-space-dark font-semibold">
             What's your biggest challenge right now?
           </Label>
           <Textarea
@@ -183,7 +183,7 @@ const LeadForm = () => {
             value={formData.challenge}
             onChange={(e) => handleChange("challenge", e.target.value)}
             placeholder="Tell us about your current challenges in scaling your business..."
-            className="bg-soft-peach border-forest-green/20 focus:border-forest-green min-h-[100px]"
+            className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan min-h-[100px] text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
             rows={4}
           />
         </div>
@@ -193,7 +193,7 @@ const LeadForm = () => {
           Get My Custom Growth Plan
         </Button>
 
-        <p className="text-center text-xs text-deep-brown/60">
+        <p className="text-center text-xs text-space-dark/60">
           We respect your privacy. Your information is safe and will never be shared.
         </p>
       </form>

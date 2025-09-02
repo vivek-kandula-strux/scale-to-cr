@@ -2,77 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Strux Digital Performance Marketing Design System
-High-converting, speed-optimized color palette
-All colors MUST be HSL.
+/* Futuristic Performance Marketing Design System
+Ultra-modern, smart gradient integration with advanced color palette
+All colors MUST be HSL for optimal performance.
 */
 
 @layer base {
   :root {
-    /* Performance Marketing Color Scheme */
-    --deep-brown: 21 97% 6%;           /* #210A03 - Primary dark background */
-    --forest-green: 134 55% 37%;       /* #2A9343 - Primary CTA color */
-    --bright-green: 110 60% 30%;       /* #3A931B - Secondary CTA/hover */
-    --soft-peach: 24 78% 91%;          /* #FCDED5 - Text on dark, cards background */
+    /* Futuristic Color Palette */
+    --space-dark: 223 47% 6%;          /* #0B0D17 - Deep space background */
+    --electric-cyan: 194 100% 50%;     /* #00D9FF - Primary electric accent */
+    --neon-purple: 248 53% 58%;        /* #8B5CF6 - Secondary neon accent */
+    --bright-mint: 158 100% 53%;       /* #10FFA0 - Tertiary bright accent */
+    --neutral-light: 210 40% 98%;      /* #F8FAFC - Clean light text/backgrounds */
+    --glass-white: 0 0% 100%;          /* #FFFFFF - Pure white for glass effects */
     
     /* Semantic Tokens */
-    --background: var(--deep-brown);
-    --foreground: var(--soft-peach);
+    --background: var(--space-dark);
+    --foreground: var(--neutral-light);
     
-    --card: var(--soft-peach);
-    --card-foreground: var(--deep-brown);
+    --card: var(--glass-white);
+    --card-foreground: var(--space-dark);
     
-    --popover: var(--soft-peach);
-    --popover-foreground: var(--deep-brown);
+    --popover: var(--glass-white);
+    --popover-foreground: var(--space-dark);
     
-    --primary: var(--forest-green);
-    --primary-foreground: var(--soft-peach);
+    --primary: var(--electric-cyan);
+    --primary-foreground: var(--space-dark);
     
-    --secondary: var(--soft-peach);
-    --secondary-foreground: var(--deep-brown);
+    --secondary: var(--neutral-light);
+    --secondary-foreground: var(--space-dark);
     
-    --muted: 21 97% 12%;               /* Slightly lighter deep brown */
-    --muted-foreground: 24 30% 70%;    /* Muted peach */
+    --muted: 223 47% 12%;              /* Slightly lighter space dark */
+    --muted-foreground: 210 20% 70%;   /* Muted neutral */
     
-    --accent: var(--bright-green);
-    --accent-foreground: var(--soft-peach);
+    --accent: var(--neon-purple);
+    --accent-foreground: var(--neutral-light);
     
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: var(--soft-peach);
+    --destructive-foreground: var(--neutral-light);
     
     --border: var(--muted);
     --input: var(--muted);
-    --ring: var(--forest-green);
+    --ring: var(--electric-cyan);
 
     --radius: 0.75rem;
     
-    /* Performance Marketing Specific Tokens */
-    --hero-bg: var(--deep-brown);
-    --cta-primary: var(--forest-green);
-    --cta-hover: var(--bright-green);
-    --section-bg: var(--soft-peach);
-    --text-on-dark: var(--soft-peach);
-    --text-on-light: var(--deep-brown);
+    /* Futuristic Design Tokens */
+    --hero-bg: var(--space-dark);
+    --cta-primary: var(--electric-cyan);
+    --cta-hover: var(--bright-mint);
+    --section-bg: var(--neutral-light);
+    --text-on-dark: var(--neutral-light);
+    --text-on-light: var(--space-dark);
     
-    /* Gradients for visual appeal */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-brown)), hsl(21 97% 8%));
-    --gradient-cta: linear-gradient(135deg, hsl(var(--forest-green)), hsl(var(--bright-green)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--soft-peach)), hsl(24 78% 88%));
+    /* Smart Gradient System */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--space-dark)), hsl(248 53% 8%), hsl(194 100% 8%));
+    --gradient-cosmic: linear-gradient(135deg, hsl(194 100% 50%), hsl(248 53% 58%), hsl(158 100% 53%));
+    --gradient-glass: linear-gradient(145deg, hsl(var(--glass-white) / 0.1), hsl(var(--glass-white) / 0.05));
+    --gradient-neon: linear-gradient(135deg, hsl(var(--electric-cyan)), hsl(var(--bright-mint)));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(248 53% 68%));
     
-    /* Shadows for depth */
-    --shadow-card: 0 4px 20px hsl(var(--deep-brown) / 0.1);
-    --shadow-cta: 0 6px 25px hsl(var(--forest-green) / 0.3);
-    --shadow-elevated: 0 10px 40px hsl(var(--deep-brown) / 0.15);
+    /* Advanced Shadow System */
+    --shadow-glass: 0 8px 32px hsl(var(--space-dark) / 0.3), 0 1px 0 hsl(var(--glass-white) / 0.1) inset;
+    --shadow-neon: 0 0 30px hsl(var(--electric-cyan) / 0.5), 0 0 60px hsl(var(--electric-cyan) / 0.3);
+    --shadow-purple: 0 0 25px hsl(var(--neon-purple) / 0.4), 0 0 50px hsl(var(--neon-purple) / 0.2);
+    --shadow-elevated: 0 20px 60px hsl(var(--space-dark) / 0.4);
     
-    /* Typography scale */
-    --font-hero: 3.5rem;
-    --font-section-title: 2.5rem;
-    --font-card-title: 1.5rem;
+    /* Modern Typography Scale */
+    --font-hero: clamp(2.5rem, 8vw, 4rem);
+    --font-section-title: clamp(2rem, 6vw, 3rem);
+    --font-card-title: clamp(1.25rem, 4vw, 1.75rem);
     --font-body: 1rem;
     
-    /* Transitions for smooth interactions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Advanced Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-glow: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+    /* Glassmorphism Properties */
+    --glass-bg: hsl(var(--glass-white) / 0.1);
+    --glass-border: hsl(var(--glass-white) / 0.2);
+    --glass-backdrop: blur(20px);
 
     --sidebar-background: 0 0% 98%;
 
