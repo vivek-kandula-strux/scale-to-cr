@@ -20,128 +20,190 @@ import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
+
   const scrollToForm = () => {
-    formRef.current?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
-  return <div className="min-h-screen bg-background text-foreground">
+
+  return (
+    <div className="min-h-screen bg-background">
       <StickyNavbar onCtaClick={scrollToForm} />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center">
+      {/* Hero Section - Mobile Optimized */}
+      <section className="pt-20 pb-12 px-3 sm:px-6 lg:px-8">
+        <div className="container mx-auto text-center max-w-6xl">
           <div className="max-w-4xl mx-auto">
-            <h1 className="md:text-6xl font-bold mb-6 animate-fade-in text-3xl">
-              Scale Your Business to{" "}
-              <span className="text-primary">₹1 CR/Month</span>{" "}
-              with Our Proven Framework
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+              Transform Your Business Into a 
+              <span className="text-primary"> Growth Machine</span>
             </h1>
-            <p className="mb-8 text-muted-foreground leading-relaxed text-base">Join 50+ coaches & edtech founders who've transformed their revenue using our data-driven growth systems & Paid Advertising. Get your custom roadmap to predictable, sustainable scaling.</p>
-            
-            <div className="mb-12">
-              <img src={heroTeam} alt="Strux Digital Team - Performance Marketing Experts" className="mx-auto rounded-lg shadow-card max-w-2xl w-full animate-fade-in border border-border hover:border-primary/50 transition-all duration-300" />
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
+              We help ambitious businesses scale from 6-figures to 7+ figures through proven digital marketing strategies, sales optimization, and operational excellence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-2 sm:px-0">
+              <Button 
+                variant="cta" 
+                size="lg"
+                onClick={scrollToForm}
+                className="w-full sm:w-auto min-h-[44px]"
+              >
+                Get My Custom Growth Plan
+              </Button>
             </div>
-            
-            <Button variant="hero" size="xl" onClick={scrollToForm} className="mb-4">
-              Let's Discuss Your Growth
-            </Button>
-            <p className="text-sm text-muted-foreground">
-              Free consultation • Custom growth plan • No obligations
-            </p>
+            <div className="flex justify-center px-2 sm:px-0">
+              <img 
+                src={heroTeam} 
+                alt="Professional team consultation" 
+                className="rounded-lg shadow-elevated w-full max-w-full sm:max-w-xl md:max-w-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-card-foreground mb-4">What We Do</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We specialize in scaling service-based businesses through proven digital marketing frameworks and automation systems.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <ServiceCard icon={Target} title="Paid Ads Management" description="High-converting ad campaigns across Google, Facebook, and LinkedIn that consistently generate qualified leads at scale." />
-            <ServiceCard icon={Zap} title="Funnel Automation" description="Complete sales funnel setup with automated nurturing sequences that convert prospects into paying clients 24/7." />
-            <ServiceCard icon={TrendingUp} title="Scaling Roadmaps" description="Custom growth strategies tailored to your business model, with clear milestones from current revenue to ₹1CR/month." />
-            <ServiceCard icon={BarChart3} title="Proven Frameworks" description="Battle-tested systems and processes that have generated over ₹100CR in revenue for our clients across industries." />
-          </div>
-          
-          <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
-              Start Your Transformation
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Value Stack */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Here's What You Get When You Partner With Us...
+      {/* What We Do Section - Mobile Optimized */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
+              What We <span className="text-primary">Do</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Everything you need to scale your business systematically and predictably to ₹1CR/month and beyond.
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
+              Our comprehensive approach combines strategy, execution, and optimization to deliver measurable growth for your business.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
-            <BenefitCard icon={Users} title="Dedicated Account Manager" description="Your personal growth strategist who knows your business inside-out and ensures every campaign is optimized for maximum ROI." />
-            <BenefitCard icon={Rocket} title="Custom Sales Funnels" description="High-converting landing pages, email sequences, and sales processes designed specifically for your business model." />
-            <BenefitCard icon={BarChart3} title="Real-Time Analytics Dashboard" description="Complete visibility into your marketing performance with detailed reporting and actionable insights delivered weekly." />
-            <BenefitCard icon={Shield} title="90-Day ROI Guarantee" description="We guarantee minimum 3x return on ad spend within 90 days, or we work for free until you achieve it." />
-            <BenefitCard icon={CheckCircle} title="Proven Growth Playbooks" description="Step-by-step systems that have consistently helped businesses scale from 6-figures to 8-figures annually." />
-            <BenefitCard icon={HeadphonesIcon} title="Priority Support Access" description="Direct access to our team via Slack for immediate support and strategic guidance whenever you need it." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <ServiceCard
+              icon={TrendingUp}
+              title="Digital Marketing Strategy"
+              description="Data-driven marketing campaigns across all channels to maximize ROI and customer acquisition."
+            />
+            <ServiceCard
+              icon={Target}
+              title="Sales Process Optimization"
+              description="Streamline your sales funnel to convert more leads and increase average transaction values."
+            />
+            <ServiceCard
+              icon={Users}
+              title="Team & Operations Scaling"
+              description="Build systems and hire the right people to support sustainable business growth."
+            />
+            <ServiceCard
+              icon={BarChart3}
+              title="Performance Analytics"
+              description="Track, measure, and optimize every aspect of your business for continuous improvement."
+            />
+            <ServiceCard
+              icon={Rocket}
+              title="Growth Strategy Development"
+              description="Custom roadmaps designed specifically for your industry and growth objectives."
+            />
+            <ServiceCard
+              icon={CheckCircle}
+              title="Implementation Support"
+              description="Hands-on support to ensure strategies are executed properly and deliver results."
+            />
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
+            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
               Start Your Transformation
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-card-foreground mb-4">Why Choose Strux Digital?</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We're not just another marketing agency. We're your growth partners, committed to your long-term success.
+      {/* Partnership Value Stack - Mobile Optimized */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 bg-card">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-3 sm:mb-4">
+              Partnership <span className="text-primary">Value Stack</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
+              When you partner with us, you're not just hiring an agency - you're gaining a dedicated growth team.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div className="text-center p-6 bg-gradient-glass backdrop-blur-glass rounded-lg shadow-glass border border-glass-white/20 hover:border-electric-cyan/50 transition-all duration-300 group">
-              <Award className="w-12 h-12 text-electric-cyan mx-auto mb-4 group-hover:animate-glow-pulse" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Proven Track Record</h3>
-              <p className="text-space-dark/80">500+ successful campaigns, ₹100CR+ revenue generated</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
+            <BenefitCard
+              icon={Award}
+              title="Proven Track Record"
+              description="We've helped 200+ businesses achieve sustainable growth with our battle-tested strategies."
+            />
+            <BenefitCard
+              icon={Clock}
+              title="Rapid Implementation"
+              description="See results in 90 days or less with our fast-track growth acceleration programs."
+            />
+            <BenefitCard
+              icon={DollarSign}
+              title="ROI Guarantee"
+              description="We're so confident in our approach, we guarantee a 3:1 return on your investment within 6 months."
+            />
+            <BenefitCard
+              icon={Users}
+              title="Dedicated Team"
+              description="Your own dedicated team of growth specialists working exclusively on your success."
+            />
+          </div>
+          
+          <div className="text-center">
+            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
+              Start Your Transformation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Mobile Optimized */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
+              Why Choose <span className="text-primary">Strux Digital</span>
+            </h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
+              We're not just another agency. We're your growth partners with a proven system.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            <div className="text-center p-4 sm:p-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Zap className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Fast Results</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Our proven methodology delivers measurable results within the first 90 days of partnership.
+              </p>
             </div>
-            <div className="text-center p-6 bg-gradient-glass backdrop-blur-glass rounded-lg shadow-glass border border-glass-white/20 hover:border-neon-purple/50 transition-all duration-300 group">
-              <PieChart className="w-12 h-12 text-neon-purple mx-auto mb-4 group-hover:animate-float" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Custom Growth Roadmap</h3>
-              <p className="text-space-dark/80">Tailored strategies based on your unique business model</p>
+            
+            <div className="text-center p-4 sm:p-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Expert Team</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Work with seasoned professionals who have scaled hundreds of businesses across various industries.
+              </p>
             </div>
-            <div className="text-center p-6 bg-gradient-glass backdrop-blur-glass rounded-lg shadow-glass border border-glass-white/20 hover:border-bright-mint/50 transition-all duration-300 group">
-              <Shield className="w-12 h-12 text-bright-mint mx-auto mb-4 group-hover:animate-glow-pulse" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Guaranteed Results</h3>
-              <p className="text-space-dark/80">3x ROI guarantee or we work for free</p>
-            </div>
-            <div className="text-center p-6 bg-gradient-glass backdrop-blur-glass rounded-lg shadow-glass border border-glass-white/20 hover:border-electric-cyan/50 transition-all duration-300 group">
-              <BarChart3 className="w-12 h-12 text-electric-cyan mx-auto mb-4 group-hover:animate-float" />
-              <h3 className="text-lg font-bold text-space-dark mb-2">Data-Driven Campaigns</h3>
-              <p className="text-space-dark/80">Every decision backed by real data and proven metrics</p>
+            
+            <div className="text-center p-4 sm:p-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Target className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">Data-Driven</h3>
+              <p className="text-sm sm:text-base text-muted-foreground">
+                Every decision is backed by data and analytics to ensure maximum ROI on your investment.
+              </p>
             </div>
           </div>
+          
           <div className="text-center">
-            <Button variant="cta-secondary" size="lg" onClick={scrollToForm}>
-              Fill Out This Form to Unlock Your Business Potential
+            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
+              Get Your Custom Growth Plan
             </Button>
           </div>
         </div>
@@ -376,6 +438,8 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;

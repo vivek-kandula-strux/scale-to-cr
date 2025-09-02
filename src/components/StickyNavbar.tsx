@@ -21,9 +21,9 @@ const StickyNavbar = ({ onCtaClick }: StickyNavbarProps) => {
             variant="cta" 
             size="lg"
             onClick={onCtaClick}
-            className="hidden sm:flex"
+            className="hidden sm:flex min-h-[44px]"
           >
-            Get My Growth Plan
+            Get Growth Plan
           </Button>
           
           {/* Mobile CTA */}
@@ -31,9 +31,9 @@ const StickyNavbar = ({ onCtaClick }: StickyNavbarProps) => {
             variant="cta" 
             size="sm"
             onClick={onCtaClick}
-            className="sm:hidden"
+            className="sm:hidden min-h-[44px]"
           >
-            Start Now
+            Get Growth Plan
           </Button>
         </div>
       </div>

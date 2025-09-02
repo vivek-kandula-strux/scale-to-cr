@@ -54,21 +54,21 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="bg-card p-8 rounded-lg shadow-card max-w-2xl mx-auto border border-border hover:border-primary/30 transition-all duration-300">
-      <div className="text-center mb-8">
-        <h3 className="text-3xl font-bold text-card-foreground mb-2">
+    <div className="bg-card p-4 sm:p-6 md:p-8 rounded-lg border border-border shadow-elevated max-w-2xl mx-auto">
+      <div className="text-center mb-4 sm:mb-6">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-card-foreground mb-2">
           Get Your Custom Growth Plan
         </h3>
-        <p className="text-muted-foreground">
-          Tell us about your business and we'll create a personalized roadmap to ₹1CR/month
+        <p className="text-sm sm:text-base text-muted-foreground px-2 sm:px-0">
+          Tell us about your business and we'll create a personalized strategy for your growth.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid md:grid-cols-2 gap-6">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {/* Name */}
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-card-foreground font-semibold">
+            <Label htmlFor="name" className="text-card-foreground font-semibold text-sm">
               Full Name *
             </Label>
             <Input
@@ -83,7 +83,7 @@ const LeadForm = () => {
 
           {/* Email */}
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-card-foreground font-semibold">
+            <Label htmlFor="email" className="text-card-foreground font-semibold text-sm">
               Email Address *
             </Label>
             <Input
@@ -99,7 +99,7 @@ const LeadForm = () => {
 
           {/* Phone */}
           <div className="space-y-2">
-            <Label htmlFor="phone" className="text-space-dark font-semibold">
+            <Label htmlFor="phone" className="text-card-foreground font-semibold text-sm">
               Phone Number *
             </Label>
             <Input
@@ -108,18 +108,18 @@ const LeadForm = () => {
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
               placeholder="+91 9876543210"
-              className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
               required
             />
           </div>
 
           {/* Business Type */}
           <div className="space-y-2">
-            <Label htmlFor="businessType" className="text-space-dark font-semibold">
+            <Label htmlFor="businessType" className="text-card-foreground font-semibold text-sm">
               Business Type
             </Label>
             <Select onValueChange={(value) => handleChange("businessType", value)}>
-              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
+              <SelectTrigger className="bg-background border-border focus:border-primary text-foreground">
                 <SelectValue placeholder="Select your business type" />
               </SelectTrigger>
               <SelectContent>
@@ -134,12 +134,12 @@ const LeadForm = () => {
           </div>
 
           {/* Current Revenue */}
-          <div className="space-y-2">
-            <Label htmlFor="currentRevenue" className="text-space-dark font-semibold">
+          <div className="space-y-2 sm:col-span-1">
+            <Label htmlFor="currentRevenue" className="text-card-foreground font-semibold text-sm">
               Current Monthly Revenue
             </Label>
             <Select onValueChange={(value) => handleChange("currentRevenue", value)}>
-              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
+              <SelectTrigger className="bg-background border-border focus:border-primary text-foreground">
                 <SelectValue placeholder="Select current revenue" />
               </SelectTrigger>
               <SelectContent>
@@ -154,12 +154,12 @@ const LeadForm = () => {
           </div>
 
           {/* Desired Revenue */}
-          <div className="space-y-2">
-            <Label htmlFor="desiredRevenue" className="text-space-dark font-semibold">
+          <div className="space-y-2 sm:col-span-1">
+            <Label htmlFor="desiredRevenue" className="text-card-foreground font-semibold text-sm">
               Desired Monthly Revenue
             </Label>
             <Select onValueChange={(value) => handleChange("desiredRevenue", value)}>
-              <SelectTrigger className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan text-space-dark backdrop-blur-glass">
+              <SelectTrigger className="bg-background border-border focus:border-primary text-foreground">
                 <SelectValue placeholder="Select target revenue" />
               </SelectTrigger>
               <SelectContent>
@@ -175,7 +175,7 @@ const LeadForm = () => {
 
         {/* Challenge */}
         <div className="space-y-2">
-          <Label htmlFor="challenge" className="text-space-dark font-semibold">
+          <Label htmlFor="challenge" className="text-card-foreground font-semibold text-sm">
             What's your biggest challenge right now?
           </Label>
           <Textarea
@@ -183,17 +183,17 @@ const LeadForm = () => {
             value={formData.challenge}
             onChange={(e) => handleChange("challenge", e.target.value)}
             placeholder="Tell us about your current challenges in scaling your business..."
-            className="bg-glass-white/10 border-electric-cyan/20 focus:border-electric-cyan min-h-[100px] text-space-dark placeholder:text-space-dark/50 backdrop-blur-glass"
+            className="bg-background border-border focus:border-primary min-h-[100px] text-foreground placeholder:text-muted-foreground"
             rows={4}
           />
         </div>
 
         {/* Submit Button */}
-        <Button type="submit" variant="hero" size="xl" className="w-full">
+        <Button type="submit" variant="cta" size="lg" className="w-full min-h-[44px]">
           Get My Custom Growth Plan
         </Button>
 
-        <p className="text-center text-xs text-space-dark/60">
+        <p className="text-center text-xs text-muted-foreground">
           We respect your privacy. Your information is safe and will never be shared.
         </p>
       </form>
