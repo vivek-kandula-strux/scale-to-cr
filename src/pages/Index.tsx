@@ -27,7 +27,7 @@ import { measurePerformance, preloadCriticalResources } from "@/utils/performanc
 // Optimized Lucide Icons - Only import what's used
 import { 
   Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, 
-  Rocket, DollarSign, Clock, Award, Settings, AlertTriangle, BrainCircuit 
+  Rocket, DollarSign, Clock, Award, Settings, AlertTriangle, Cpu 
 } from "lucide-react";
 
 // Images - Using Supabase Storage URLs
@@ -314,7 +314,7 @@ const Index = () => {
               <LazyChallengeCard icon={Users} title="Inconsistent client flow" description="Great months followed by dry spells - no predictable lead generation" />
             </Suspense>
             <Suspense fallback={<ChallengeSkeleton />}>
-              <LazyChallengeCard icon={BrainCircuit} title="Tech overwhelm" description="Too many tools, platforms, and systems that don't work together" />
+              <LazyChallengeCard icon={Cpu} title="Tech overwhelm" description="Too many tools, platforms, and systems that don't work together" />
             </Suspense>
             <Suspense fallback={<ChallengeSkeleton />}>
               <LazyChallengeCard icon={TrendingUp} title="Revenue ceiling" description="Stuck at the same revenue level despite working harder" />
