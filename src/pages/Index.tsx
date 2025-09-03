@@ -26,7 +26,7 @@ const Index = () => {
     });
   };
   return <div className="min-h-screen bg-background overflow-x-hidden">
-      <StickyNavbar onCtaClick={scrollToForm} />
+      <StickyNavbar />
       
       {/* Hero Section - Modern 2025 Design */}
       <section className="relative pt-20 pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
