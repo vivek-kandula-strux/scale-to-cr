@@ -7,7 +7,7 @@ interface OptimizedImageProps {
   height?: number;
   className?: string;
   loading?: 'eager' | 'lazy';
-  fetchpriority?: 'high' | 'low' | 'auto';
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const OptimizedImage = ({ 
@@ -17,7 +17,7 @@ const OptimizedImage = ({
   height, 
   className, 
   loading = 'lazy',
-  fetchpriority = 'auto'
+  fetchPriority = 'auto'
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -56,9 +56,10 @@ const OptimizedImage = ({
         height={height}
         className={`${className} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         loading={loading}
-        fetchPriority={fetchpriority}
+        fetchPriority={fetchPriority}
         onLoad={handleLoad}
         onError={handleError}
+        decoding="async"
       />
     </div>
   );
