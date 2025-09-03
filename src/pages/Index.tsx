@@ -346,12 +346,12 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h3 className="text-base sm:text-lg font-semibold text-muted-foreground mb-4">Trusted by Leading Platforms</h3>
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 opacity-70">
-              <div className="text-primary font-bold text-lg sm:text-xl">Google Partner</div>
-              <div className="text-primary font-bold text-lg sm:text-xl">Meta Business</div>
-              <div className="text-primary font-bold text-lg sm:text-xl">LinkedIn Partner</div>
-              <div className="text-primary font-bold text-lg sm:text-xl">ClickFunnels</div>
-              <div className="text-primary font-bold text-lg sm:text-xl">HubSpot</div>
+            <div className="flex justify-center">
+              <img 
+                src="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/Partner-Logos-Meta-Google.webp" 
+                alt="Partner Logos - Meta and Google Certified Partners" 
+                className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
             </div>
           </div>
         </div>
