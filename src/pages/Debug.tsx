@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -181,12 +183,19 @@ const Debug = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background p-4">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Google Sheets Integration Debug</h1>
-          <p className="text-muted-foreground">Test and debug your Google Sheets sync connection</p>
-        </div>
+    <>
+      <Helmet>
+        <title>Debug Tools - Google Sheets Integration | Strux Digital</title>
+        <meta name="description" content="Internal debug tools for testing Google Sheets integration and form submissions." />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background p-4">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-foreground mb-2">Google Sheets Integration Debug</h1>
+            <p className="text-muted-foreground">Test and debug your Google Sheets sync connection</p>
+          </div>
 
         {/* Connection Status */}
         <Card>
@@ -441,6 +450,7 @@ const Debug = () => {
         </Card>
       </div>
     </div>
+    </>
   );
 };
 

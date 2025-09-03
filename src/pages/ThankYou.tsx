@@ -5,8 +5,8 @@ const ThankYou = () => {
   return (
     <>
       <Helmet>
-        <title>Thank You - Business Growth Consulting</title>
-        <meta name="description" content="Thank you for your interest in our business growth consulting services. We'll be in touch soon." />
+        <title>Thank You - Business Growth Consultation Scheduled | Strux Digital</title>
+        <meta name="description" content="Thank you for scheduling your consultation with Strux Digital. Our team will contact you soon to discuss your business growth strategy." />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 

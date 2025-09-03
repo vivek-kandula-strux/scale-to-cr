@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import StickyNavbar from "@/components/StickyNavbar";
 import ServiceCard from "@/components/ServiceCard";
@@ -42,8 +43,23 @@ const Index = () => {
     return client?.image_url || '/placeholder.svg';
   };
 
-  return <div className="min-h-screen bg-background overflow-x-hidden">
-      <StickyNavbar />
+  return (
+    <>
+      <Helmet>
+        <title>Scale to ₹1CR/Month | Proven Growth Systems | Strux Digital</title>
+        <meta name="description" content="Transform your coaching or consulting business with our proven framework. Join 500+ clients who've scaled to ₹1CR/month with our data-driven growth systems. Free consultation available." />
+        <meta name="keywords" content="business scaling, digital marketing, performance marketing, business growth, coaching business, consulting growth, ₹1 crore revenue" />
+        <meta property="og:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
+        <meta property="og:description" content="Join 500+ coaches and consultants who've transformed their revenue using our proven growth systems. Get your custom roadmap to predictable scaling." />
+        <meta property="og:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
+        <meta name="twitter:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
+        <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 500+ success stories. Free consultation available." />
+        <meta name="twitter:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
+        <link rel="canonical" href="/" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background overflow-x-hidden">
+        <StickyNavbar />
       
       {/* Hero Section - Modern 2025 Design */}
       <section className="relative pt-20 pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
@@ -359,7 +375,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>;
+    </div>
+    </>
+  );
 };
 
 export default Index;
