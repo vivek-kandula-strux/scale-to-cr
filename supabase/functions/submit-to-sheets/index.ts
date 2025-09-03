@@ -78,13 +78,21 @@ serve(async (req) => {
 
     // Submit to Google Sheets
     const GOOGLE_SHEETS_API_KEY = Deno.env.get('GOOGLE_SHEETS_API_KEY');
+    const SHEET_ID = Deno.env.get('GOOGLE_SHEET_ID'); // Configure this secret
     
-    // You'll need to update this with your actual Google Sheets ID
-    // Format: https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit
-    const SHEET_ID = 'YOUR_GOOGLE_SHEET_ID_HERE'; // User needs to provide this
-    const RANGE = 'Sheet1!A:H'; // Adjust range as needed
+    // Sheet configuration
+    const RANGE = 'Sheet1!A:H'; // Targeting columns A-H in Sheet1 tab
     
-    if (GOOGLE_SHEETS_API_KEY && SHEET_ID !== 'YOUR_GOOGLE_SHEET_ID_HERE') {
+    console.log('Google Sheets Configuration:');
+    console.log(`- API Key configured: ${GOOGLE_SHEETS_API_KEY ? 'Yes' : 'No'}`);
+    console.log(`- Sheet ID configured: ${SHEET_ID ? 'Yes' : 'No'}`);
+    console.log(`- Target range: ${RANGE}`);
+    console.log(`- Target URL: ${SHEET_ID ? `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit` : 'Not configured'}`);
+    
+    // Headers for the sheet (will be manually added to row 1)
+    console.log('Expected headers: Timestamp, Name, Email, Phone, Business Type, Current Revenue, Desired Revenue, Challenge');
+    
+    if (GOOGLE_SHEETS_API_KEY && SHEET_ID) {
       try {
         const sheetsResponse = await fetch(
           `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}:append?valueInputOption=RAW&key=${GOOGLE_SHEETS_API_KEY}`,
