@@ -41,6 +41,33 @@ export type Database = {
         }
         Relationships: []
       }
+      client_logos: {
+        Row: {
+          business: string | null
+          created_at: string
+          id: string
+          image_url: string
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          business?: string | null
+          created_at?: string
+          id?: string
+          image_url: string
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          business?: string | null
+          created_at?: string
+          id?: string
+          image_url?: string
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       lead_submissions: {
         Row: {
           business_type: string | null

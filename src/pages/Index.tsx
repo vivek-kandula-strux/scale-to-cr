@@ -17,6 +17,7 @@ import {
   TestimonialSkeleton, 
   ChallengeSkeleton 
 } from "@/components/LoadingSkeletons";
+import { useClientLogos } from "@/hooks/useClientLogos";
 
 // Lucide Icons
 import { Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, Shield, Rocket, DollarSign, Clock, Award, HeadphonesIcon, PieChart, Settings, AlertTriangle, BrainCircuit, Smartphone, Globe, PlayCircle } from "lucide-react";
@@ -29,8 +30,16 @@ import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 
 const Index = () => {
+  const { data: clientLogos } = useClientLogos();
+  
   const handleCtaClick = () => {
     window.open('https://tidycal.com/struxdigital/strux-discovery-call-email', '_blank');
+  };
+
+  // Helper function to get client image URL by name
+  const getClientImageUrl = (name: string) => {
+    const client = clientLogos?.find(logo => logo.name === name);
+    return client?.image_url || '/placeholder.svg';
   };
 
   return <div className="min-h-screen bg-background overflow-x-hidden">
@@ -96,22 +105,22 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Lokesh Lalwani" business="Data Analytics & Excel Coach (1.34M YouTube Followers)" result="₹0 → ₹3.7CR in 22 months" testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." />
+              <LazyTestimonialCard image={getClientImageUrl("Lokesh Lalwani")} name="Lokesh Lalwani" business="Data Analytics & Excel Coach (1.34M YouTube Followers)" result="₹0 → ₹3.7CR in 22 months" testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." />
             </Suspense>
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Rajni Singh" business="India's Top Autism Coach" result="₹0 → ₹70L/month" testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." />
+              <LazyTestimonialCard image={getClientImageUrl("Rajni Singh")} name="Rajni Singh" business="India's Top Autism Coach" result="₹0 → ₹70L/month" testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." />
             </Suspense>
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Gaurav Arora" business="India's Top Coach for CAs" result="250 → 1200+ attendees, 15% lower CPA" testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" />
+              <LazyTestimonialCard image={getClientImageUrl("Gaurav Arora")} name="Gaurav Arora" business="India's Top Coach for CAs" result="250 → 1200+ attendees, 15% lower CPA" testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" />
             </Suspense>
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Sudhir Kove" business="Watch & Logo Analysis Coach" result="₹35L/month per funnel (3 funnels)" testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." />
+              <LazyTestimonialCard image={getClientImageUrl("Sudhir Kove")} name="Sudhir Kove" business="Watch & Logo Analysis Coach" result="₹35L/month per funnel (3 funnels)" testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." />
             </Suspense>
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Jatan Shah" business="Skill Nation - Top EdTech Platform" result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." />
+              <LazyTestimonialCard image={getClientImageUrl("Jatan Shah")} name="Jatan Shah" business="Skill Nation - Top EdTech Platform" result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." />
             </Suspense>
             <Suspense fallback={<TestimonialSkeleton />}>
-              <LazyTestimonialCard image="/placeholder.svg" name="Rohini Sri" business="Montessori & Parenting Coach" result="₹0 → ₹25L/month profit in 3 months" testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." />
+              <LazyTestimonialCard image={getClientImageUrl("Rohini Sri")} name="Rohini Sri" business="Montessori & Parenting Coach" result="₹0 → ₹25L/month profit in 3 months" testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." />
             </Suspense>
           </div>
           
