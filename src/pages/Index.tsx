@@ -30,7 +30,7 @@ const Index = () => {
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section - Modern 2025 Design */}
-      <section className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-20 pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-gradient-hero"></div>
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent-primary/30 rounded-full filter blur-3xl animate-float"></div>
