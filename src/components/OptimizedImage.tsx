@@ -56,7 +56,7 @@ const OptimizedImage = ({
         height={height}
         className={`${className} ${!isLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         loading={loading}
-        fetchPriority={fetchPriority}
+        {...(fetchPriority ? { fetchpriority: fetchPriority } : {})}
         onLoad={handleLoad}
         onError={handleError}
         decoding="async"
