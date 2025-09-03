@@ -65,6 +65,69 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Success Stories Section - Second Section */}
+      <section className="py-8 sm:py-10 bg-card">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-10">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-2 sm:mb-3">Success Stories</h2>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real results from real clients who've transformed their businesses with our proven systems.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Lokesh Lalwani" 
+              business="Data Analytics & Excel Coach (1.34M YouTube Followers)" 
+              result="₹0 → ₹3.7CR in 22 months" 
+              testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." 
+            />
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Rajni Singh" 
+              business="India's Top Autism Coach" 
+              result="₹0 → ₹70L/month" 
+              testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." 
+            />
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Gaurav Arora" 
+              business="India's Top Coach for CAs" 
+              result="250 → 1200+ attendees, 15% lower CPA" 
+              testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" 
+            />
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Sudhir Kove" 
+              business="Watch & Logo Analysis Coach" 
+              result="₹35L/month per funnel (3 funnels)" 
+              testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." 
+            />
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Jatan Shah" 
+              business="Skill Nation - Top EdTech Platform" 
+              result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" 
+              testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." 
+            />
+            <TestimonialCard 
+              image="/placeholder.svg" 
+              name="Rohini Sri" 
+              business="Montessori & Parenting Coach" 
+              result="₹0 → ₹25L/month profit in 3 months" 
+              testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." 
+            />
+          </div>
+          
+          <div className="text-center">
+            <Button variant="cta" size="lg" onClick={scrollToForm}>
+              Ready to Be Our Next Success Story?
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* What We Do Section - Mobile Optimized */}
       <section className="py-8 sm:py-10 px-3 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
@@ -264,40 +327,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-8 sm:py-10 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-3">Success Stories</h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real results from real clients who've transformed their businesses with our proven systems.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
-            <TestimonialCard image={testimonial1} name="Rajesh Kumar" business="Digital Marketing Coach" result="₹2L → ₹75L/month" testimonial="Strux Digital completely transformed my coaching business. Their funnel strategy and ad management helped me scale from ₹2 lakhs to ₹75 lakhs per month in just 8 months. The ROI has been incredible!" />
-            <TestimonialCard image={testimonial2} name="Priya Sharma" business="Business Consultant" result="₹5L → ₹1.2CR/month" testimonial="I was struggling to break through the ₹5 lakh ceiling for years. With their custom growth roadmap and automation systems, I achieved ₹1.2 CR monthly revenue in 6 months. Best investment ever!" />
-            <div className="bg-card backdrop-blur-sm p-6 rounded-lg shadow-card border border-border hover:border-primary/50 transition-all duration-300">
-              <div className="flex items-center justify-center mb-4">
-                <PlayCircle className="w-12 h-12 text-primary hover:scale-110 transition-transform duration-300" />
-              </div>
-              <h4 className="font-semibold text-card-foreground text-center mb-2">Video Testimonial</h4>
-              <p className="text-muted-foreground text-center text-sm">
-                "See how we helped Amit scale from ₹10L to ₹2CR in 12 months"
-              </p>
-              <div className="mt-4 text-center">
-                <Button variant="cta-secondary" size="sm">Watch Story</Button>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
-              Ready to Be Our Next Success Story?
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Partners Section */}
       <section className="py-6 sm:py-8 bg-card">
