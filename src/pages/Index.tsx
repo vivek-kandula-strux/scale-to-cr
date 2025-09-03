@@ -132,7 +132,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="hero" size="xl" onClick={scrollToForm} className="animate-glow-pulse">
+            <Button variant="hero" size="xl" onClick={scrollToForm} className="animate-glow-pulse w-full max-w-md mx-auto px-4 py-3 text-sm sm:text-base">
               Ready to Be Our Next Success Story?
             </Button>
           </div>
