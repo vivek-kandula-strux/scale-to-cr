@@ -22,48 +22,58 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Core React
-          vendor: ['react', 'react-dom'],
+        manualChunks: (id) => {
+          // React and React DOM
+          if (id.includes('react') && !id.includes('@')) {
+            return 'react-vendor';
+          }
           
-          // React Query and routing
-          query: ['@tanstack/react-query', 'react-router-dom'],
+          // Radix UI components
+          if (id.includes('@radix-ui')) {
+            return 'radix-ui';
+          }
           
           // Supabase
-          supabase: ['@supabase/supabase-js'],
+          if (id.includes('@supabase')) {
+            return 'supabase';
+          }
           
-          // Form handling
-          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+          // React Query
+          if (id.includes('@tanstack/react-query')) {
+            return 'react-query';
+          }
           
-          // UI Framework - split by usage frequency
-          'ui-core': [
-            '@radix-ui/react-slot',
-            '@radix-ui/react-tooltip',
-            'class-variance-authority',
-            'clsx',
-            'tailwind-merge'
-          ],
-          'ui-components': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-toast',
-            'sonner'
-          ],
-          'ui-advanced': [
-            '@radix-ui/react-select',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-scroll-area'
-          ],
+          // Lucide icons - split into separate chunk
+          if (id.includes('lucide-react')) {
+            return 'lucide-icons';
+          }
           
-          // Icons - only import what's used
-          icons: ['lucide-react'],
+          // Form libraries
+          if (id.includes('react-hook-form') || id.includes('@hookform')) {
+            return 'form-libs';
+          }
           
-          // Utilities
-          utils: ['date-fns', 'date-fns-tz', 'react-helmet-async']
-        },
-      },
+          // Router
+          if (id.includes('react-router')) {
+            return 'router';
+          }
+          
+          // Other vendor packages
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
+      }
     },
     chunkSizeWarningLimit: 1000,
-  },
+    target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log']
+      }
+    }
+  }
 }));

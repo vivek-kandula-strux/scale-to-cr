@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -6,10 +6,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLazyValidation } from "@/components/LazyFormValidation";
 
 const LeadForm = () => {
   const { toast } = useToast();
+  const { validateForm } = useLazyValidation();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasStartedTyping, setHasStartedTyping] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,14 +26,27 @@ const LeadForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast({
-        title: "Required fields missing",
-        description: "Please fill in your name, email, and phone number.",
-        variant: "destructive"
-      });
-      return;
+    // Lazy validation - only loads when form is submitted
+    if (hasStartedTyping) {
+      const validation = await validateForm(formData);
+      if (!validation.isValid) {
+        toast({
+          title: "Validation Error",
+          description: validation.errors.join(", "),
+          variant: "destructive"
+        });
+        return;
+      }
+    } else {
+      // Basic validation fallback for users who don't trigger lazy loading
+      if (!formData.name || !formData.email || !formData.phone) {
+        toast({
+          title: "Required fields missing",
+          description: "Please fill in your name, email, and phone number.",
+          variant: "destructive"
+        });
+        return;
+      }
     }
 
     setIsSubmitting(true);
@@ -86,9 +102,13 @@ const LeadForm = () => {
     }
   };
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = useCallback((field: string, value: string) => {
+    // Mark that user has started typing to enable lazy validation
+    if (!hasStartedTyping && value.trim()) {
+      setHasStartedTyping(true);
+    }
     setFormData(prev => ({ ...prev, [field]: value }));
-  };
+  }, [hasStartedTyping]);
 
   return (
     <div className="bg-card p-6 sm:p-8 md:p-10 rounded-2xl border border-border shadow-elevated max-w-3xl mx-auto">

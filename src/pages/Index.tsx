@@ -21,10 +21,10 @@ import {
   ChallengeSkeleton 
 } from "@/components/LoadingSkeletons";
 import ServiceCardSkeleton from "@/components/ServiceCardSkeleton";
-import { useClientLogos } from "@/hooks/useClientLogos";
+import { getClientImageUrl } from "@/data/clientLogos";
 import { measurePerformance, preloadCriticalResources } from "@/utils/performance";
 
-// Optimized Lucide Icons - Only import what's used
+// Optimized Lucide Icons - Tree shaken and lazy loaded
 import { 
   Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, 
   Rocket, DollarSign, Clock, Award, Settings, AlertTriangle, Cpu 
@@ -38,8 +38,6 @@ import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 
 const Index = () => {
-  const { data: clientLogos } = useClientLogos();
-  
   // Performance monitoring
   useEffect(() => {
     measurePerformance();
@@ -48,12 +46,6 @@ const Index = () => {
   
   const handleCtaClick = () => {
     window.open('https://tidycal.com/struxdigital/strux-discovery-call-email', '_blank');
-  };
-
-  // Helper function to get client image URL by name
-  const getClientImageUrl = (name: string) => {
-    const client = clientLogos?.find(logo => logo.name === name);
-    return client?.image_url || '/placeholder.svg';
   };
 
   return (
