@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import StickyNavbar from "@/components/StickyNavbar";
 import ServiceCard from "@/components/ServiceCard";
@@ -6,7 +7,16 @@ import TestimonialCard from "@/components/TestimonialCard";
 import ChallengeCard from "@/components/ChallengeCard";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import LeadForm from "@/components/LeadForm";
-import FAQAccordion from "@/components/FAQAccordion";
+import { 
+  LazyFAQAccordion, 
+  LazyTestimonialCard, 
+  LazyChallengeCard 
+} from "@/components/LazyComponents";
+import { 
+  FAQSkeleton, 
+  TestimonialSkeleton, 
+  ChallengeSkeleton 
+} from "@/components/LoadingSkeletons";
 
 // Lucide Icons
 import { Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, Shield, Rocket, DollarSign, Clock, Award, HeadphonesIcon, PieChart, Settings, AlertTriangle, BrainCircuit, Smartphone, Globe, PlayCircle } from "lucide-react";
@@ -85,12 +95,24 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
-            <TestimonialCard image="/placeholder.svg" name="Lokesh Lalwani" business="Data Analytics & Excel Coach (1.34M YouTube Followers)" result="₹0 → ₹3.7CR in 22 months" testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." />
-            <TestimonialCard image="/placeholder.svg" name="Rajni Singh" business="India's Top Autism Coach" result="₹0 → ₹70L/month" testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." />
-            <TestimonialCard image="/placeholder.svg" name="Gaurav Arora" business="India's Top Coach for CAs" result="250 → 1200+ attendees, 15% lower CPA" testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" />
-            <TestimonialCard image="/placeholder.svg" name="Sudhir Kove" business="Watch & Logo Analysis Coach" result="₹35L/month per funnel (3 funnels)" testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." />
-            <TestimonialCard image="/placeholder.svg" name="Jatan Shah" business="Skill Nation - Top EdTech Platform" result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." />
-            <TestimonialCard image="/placeholder.svg" name="Rohini Sri" business="Montessori & Parenting Coach" result="₹0 → ₹25L/month profit in 3 months" testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." />
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Lokesh Lalwani" business="Data Analytics & Excel Coach (1.34M YouTube Followers)" result="₹0 → ₹3.7CR in 22 months" testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." />
+            </Suspense>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Rajni Singh" business="India's Top Autism Coach" result="₹0 → ₹70L/month" testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." />
+            </Suspense>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Gaurav Arora" business="India's Top Coach for CAs" result="250 → 1200+ attendees, 15% lower CPA" testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" />
+            </Suspense>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Sudhir Kove" business="Watch & Logo Analysis Coach" result="₹35L/month per funnel (3 funnels)" testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." />
+            </Suspense>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Jatan Shah" business="Skill Nation - Top EdTech Platform" result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." />
+            </Suspense>
+            <Suspense fallback={<TestimonialSkeleton />}>
+              <LazyTestimonialCard image="/placeholder.svg" name="Rohini Sri" business="Montessori & Parenting Coach" result="₹0 → ₹25L/month profit in 3 months" testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." />
+            </Suspense>
           </div>
           
           <div className="text-center">
@@ -224,32 +246,21 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 max-w-6xl mx-auto">
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <AlertTriangle className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Scaling ads effectively</h3>
-              <p className="text-muted-foreground">Your ad costs keep increasing but leads quality is decreasing</p>
-            </div>
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <Settings className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Wrong funnel strategy</h3>
-              <p className="text-muted-foreground">Your funnel converts visitors but fails to generate enough revenue</p>
-            </div>
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <Users className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Inconsistent client flow</h3>
-              <p className="text-muted-foreground">Great months followed by dry spells - no predictable lead generation</p>
-            </div>
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <BrainCircuit className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Tech overwhelm</h3>
-              <p className="text-muted-foreground">Too many tools, platforms, and systems that don't work together</p>
-            </div>
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <TrendingUp className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Revenue ceiling</h3>
-              <p className="text-muted-foreground">Stuck at the same revenue level despite working harder</p>
-            </div>
-            
+            <Suspense fallback={<ChallengeSkeleton />}>
+              <LazyChallengeCard icon={AlertTriangle} title="Scaling ads effectively" description="Your ad costs keep increasing but leads quality is decreasing" />
+            </Suspense>
+            <Suspense fallback={<ChallengeSkeleton />}>
+              <LazyChallengeCard icon={Settings} title="Wrong funnel strategy" description="Your funnel converts visitors but fails to generate enough revenue" />
+            </Suspense>
+            <Suspense fallback={<ChallengeSkeleton />}>
+              <LazyChallengeCard icon={Users} title="Inconsistent client flow" description="Great months followed by dry spells - no predictable lead generation" />
+            </Suspense>
+            <Suspense fallback={<ChallengeSkeleton />}>
+              <LazyChallengeCard icon={BrainCircuit} title="Tech overwhelm" description="Too many tools, platforms, and systems that don't work together" />
+            </Suspense>
+            <Suspense fallback={<ChallengeSkeleton />}>
+              <LazyChallengeCard icon={TrendingUp} title="Revenue ceiling" description="Stuck at the same revenue level despite working harder" />
+            </Suspense>
           </div>
           
           <div className="text-center">
@@ -328,7 +339,9 @@ const Index = () => {
             </p>
           </div>
           
-          <FAQAccordion />
+          <Suspense fallback={<FAQSkeleton />}>
+            <LazyFAQAccordion />
+          </Suspense>
           
           <div className="text-center mt-8 sm:mt-10">
             <Button variant="cta" size="lg" onClick={handleCtaClick}>
