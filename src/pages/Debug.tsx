@@ -33,6 +33,8 @@ const Debug = () => {
   const [isTestingConnection, setIsTestingConnection] = useState(false);
   const [isSubmittingTest, setIsSubmittingTest] = useState(false);
   const [lastResponse, setLastResponse] = useState<any>(null);
+  const [configStatus, setConfigStatus] = useState<any>(null);
+  const [isCheckingConfig, setIsCheckingConfig] = useState(false);
   
   const { toast } = useToast();
 

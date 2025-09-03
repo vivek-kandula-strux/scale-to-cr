@@ -111,7 +111,10 @@ serve(async (req) => {
         const payloadB64 = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
 
         // Import private key for signing
-        const privateKeyPem = serviceAccount.private_key.replace(/\\n/g, '\n');
+        if (!serviceAccount?.private_key || !serviceAccount?.client_email) {
+          throw new Error('Invalid Google Service Account JSON: missing private_key or client_email');
+        }
+        const privateKeyPem = String(serviceAccount.private_key).replace(/\\n/g, '\n');
         const keyData = privateKeyPem.replace(/-----BEGIN PRIVATE KEY-----|\n|-----END PRIVATE KEY-----/g, '');
         const keyBytes = Uint8Array.from(atob(keyData), c => c.charCodeAt(0));
         
