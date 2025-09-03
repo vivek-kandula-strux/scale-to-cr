@@ -5,9 +5,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const LeadForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,7 +20,7 @@ const LeadForm = () => {
     challenge: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -31,22 +33,57 @@ const LeadForm = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Success! 🎉",
-      description: "We'll contact you within 24 hours with your custom growth plan.",
-    });
+    setIsSubmitting(true);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      businessType: "",
-      currentRevenue: "",
-      desiredRevenue: "",
-      challenge: ""
-    });
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          business_type: formData.businessType,
+          current_revenue: formData.currentRevenue,
+          desired_revenue: formData.desiredRevenue,
+          challenge: formData.challenge
+        }
+      });
+
+      if (error) {
+        console.error('Submission error:', error);
+        toast({
+          title: "Submission failed",
+          description: "There was an error submitting your form. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Success! 🎉",
+        description: "We'll contact you within 24 hours with your custom growth plan.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        businessType: "",
+        currentRevenue: "",
+        desiredRevenue: "",
+        challenge: ""
+      });
+
+    } catch (error) {
+      console.error('Unexpected error:', error);
+      toast({
+        title: "Submission failed",
+        description: "There was an unexpected error. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -189,8 +226,14 @@ const LeadForm = () => {
         </div>
 
         {/* Submit Button */}
-        <Button type="submit" variant="cta" size="lg" className="w-full min-h-[44px]">
-          Get My Custom Growth Plan
+        <Button 
+          type="submit" 
+          variant="cta" 
+          size="lg" 
+          className="w-full min-h-[44px]"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting..." : "Get My Custom Growth Plan"}
         </Button>
 
         <p className="text-center text-xs text-muted-foreground">
