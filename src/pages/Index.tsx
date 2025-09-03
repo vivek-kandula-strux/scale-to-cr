@@ -20,13 +20,12 @@ import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 const Index = () => {
   const formRef = useRef<HTMLDivElement>(null);
-
   const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    formRef.current?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+  return <div className="min-h-screen bg-background overflow-x-hidden">
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section - Modern 2025 Design */}
@@ -34,38 +33,37 @@ const Index = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-gradient-hero"></div>
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent-primary/30 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-secondary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-secondary/20 rounded-full filter blur-3xl animate-float" style={{
+        animationDelay: '2s'
+      }}></div>
         
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground mb-6 sm:mb-6 leading-[1.1] tracking-tight animate-fade-in">
               Leading Marketing Partner for <span className="gradient-text">Coaches</span>, <span className="gradient-text">Creators</span> & Ed Tech Brands.
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{
+            animationDelay: '0.2s'
+          }}>
               Scale your coaching & training business with Strux Digital's fully managed performance marketing services!
             </p>
           </div>
           
           {/* Large Hero Image - Enhanced */}
-          <div className="w-full flex justify-center mb-8 sm:mb-12 animate-scale-in" style={{animationDelay: '0.4s'}}>
+          <div className="w-full flex justify-center mb-8 sm:mb-12 animate-scale-in" style={{
+          animationDelay: '0.4s'
+        }}>
             <div className="relative max-w-full">
-              <img 
-                src={heroClientLogos} 
-                alt="Hero Client Logo Collage" 
-                className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
-              />
+              <img src={heroClientLogos} alt="Hero Client Logo Collage" className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700" />
               <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 hover:opacity-10 transition-opacity duration-500"></div>
             </div>
           </div>
           
-          <div className="max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
+          <div className="max-w-5xl mx-auto animate-fade-in" style={{
+          animationDelay: '0.6s'
+        }}>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              <Button 
-                variant="hero" 
-                size="xl"
-                onClick={scrollToForm}
-                className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8"
-              >
+              <Button variant="hero" size="xl" onClick={scrollToForm} className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8">
                 Get My Custom Growth Plan
               </Button>
             </div>
@@ -81,54 +79,20 @@ const Index = () => {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-card-foreground mb-3 sm:mb-4 animate-fade-in">
               Success <span className="gradient-text">Stories</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.1s'}}>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{
+            animationDelay: '0.1s'
+          }}>
               Real results from real clients who've transformed their businesses with our proven systems.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Lokesh Lalwani" 
-              business="Data Analytics & Excel Coach (1.34M YouTube Followers)" 
-              result="₹0 → ₹3.7CR in 22 months" 
-              testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." 
-            />
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Rajni Singh" 
-              business="India's Top Autism Coach" 
-              result="₹0 → ₹70L/month" 
-              testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." 
-            />
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Gaurav Arora" 
-              business="India's Top Coach for CAs" 
-              result="250 → 1200+ attendees, 15% lower CPA" 
-              testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" 
-            />
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Sudhir Kove" 
-              business="Watch & Logo Analysis Coach" 
-              result="₹35L/month per funnel (3 funnels)" 
-              testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." 
-            />
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Jatan Shah" 
-              business="Skill Nation - Top EdTech Platform" 
-              result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" 
-              testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." 
-            />
-            <TestimonialCard 
-              image="/placeholder.svg" 
-              name="Rohini Sri" 
-              business="Montessori & Parenting Coach" 
-              result="₹0 → ₹25L/month profit in 3 months" 
-              testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." 
-            />
+            <TestimonialCard image="/placeholder.svg" name="Lokesh Lalwani" business="Data Analytics & Excel Coach (1.34M YouTube Followers)" result="₹0 → ₹3.7CR in 22 months" testimonial="Strux Digital's comprehensive funnel strategy and performance marketing helped us scale from zero to ₹3.7 crores in just 22 months. Their data-driven approach was exactly what our coaching business needed." />
+            <TestimonialCard image="/placeholder.svg" name="Rajni Singh" business="India's Top Autism Coach" result="₹0 → ₹70L/month" testimonial="The transformation has been incredible! From starting at zero to generating ₹70 lakhs monthly revenue. Their expertise in scaling coaching businesses is unmatched." />
+            <TestimonialCard image="/placeholder.svg" name="Gaurav Arora" business="India's Top Coach for CAs" result="250 → 1200+ attendees, 15% lower CPA" testimonial="Workshop attendance increased from 250 to over 1200 paid attendees in just 3 months, while our cost per acquisition dropped by 15%. Outstanding results!" />
+            <TestimonialCard image="/placeholder.svg" name="Sudhir Kove" business="Watch & Logo Analysis Coach" result="₹35L/month per funnel (3 funnels)" testimonial="They helped us launch and scale 3 profitable funnels over 14 months. Each funnel now generates ₹35 lakhs monthly - the systematic approach was game-changing." />
+            <TestimonialCard image="/placeholder.svg" name="Jatan Shah" business="Skill Nation - Top EdTech Platform" result="₹0 → ₹23L ad spend in 34 days, 40% lower CPA" testimonial="Aggressive scaling done right! We went from zero to ₹23 lakhs in ad spend within 34 days while maintaining 40% lower cost per acquisition. Exceptional execution." />
+            <TestimonialCard image="/placeholder.svg" name="Rohini Sri" business="Montessori & Parenting Coach" result="₹0 → ₹25L/month profit in 3 months" testimonial="From zero to ₹25 lakhs monthly profit in just 3 months! Their funnel optimization and marketing strategy delivered results faster than I ever imagined possible." />
           </div>
           
           <div className="text-center">
@@ -141,7 +105,9 @@ const Index = () => {
 
       {/* What We Do Section - Enhanced Modern Design */}
       <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 relative">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-tertiary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-tertiary/20 rounded-full filter blur-3xl animate-float" style={{
+        animationDelay: '1s'
+      }}></div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-10 sm:mb-14">
@@ -154,36 +120,12 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 sm:mb-10">
-            <ServiceCard
-              icon={TrendingUp}
-              title="Digital Marketing Strategy"
-              description="Data-driven marketing campaigns across all channels to maximize ROI and customer acquisition."
-            />
-            <ServiceCard
-              icon={Target}
-              title="Sales Process Optimization"
-              description="Streamline your sales funnel to convert more leads and increase average transaction values."
-            />
-            <ServiceCard
-              icon={Users}
-              title="Team & Operations Scaling"
-              description="Build systems and hire the right people to support sustainable business growth."
-            />
-            <ServiceCard
-              icon={BarChart3}
-              title="Performance Analytics"
-              description="Track, measure, and optimize every aspect of your business for continuous improvement."
-            />
-            <ServiceCard
-              icon={Rocket}
-              title="Growth Strategy Development"
-              description="Custom roadmaps designed specifically for your industry and growth objectives."
-            />
-            <ServiceCard
-              icon={CheckCircle}
-              title="Implementation Support"
-              description="Hands-on support to ensure strategies are executed properly and deliver results."
-            />
+            <ServiceCard icon={TrendingUp} title="Digital Marketing Strategy" description="Data-driven marketing campaigns across all channels to maximize ROI and customer acquisition." />
+            <ServiceCard icon={Target} title="Sales Process Optimization" description="Streamline your sales funnel to convert more leads and increase average transaction values." />
+            <ServiceCard icon={Users} title="Team & Operations Scaling" description="Build systems and hire the right people to support sustainable business growth." />
+            <ServiceCard icon={BarChart3} title="Performance Analytics" description="Track, measure, and optimize every aspect of your business for continuous improvement." />
+            <ServiceCard icon={Rocket} title="Growth Strategy Development" description="Custom roadmaps designed specifically for your industry and growth objectives." />
+            <ServiceCard icon={CheckCircle} title="Implementation Support" description="Hands-on support to ensure strategies are executed properly and deliver results." />
           </div>
           
           <div className="text-center">
@@ -207,26 +149,10 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <BenefitCard
-              icon={Award}
-              title="Proven Track Record"
-              description="We've helped 200+ businesses achieve sustainable growth with our battle-tested strategies."
-            />
-            <BenefitCard
-              icon={Clock}
-              title="Rapid Implementation"
-              description="See results in 90 days or less with our fast-track growth acceleration programs."
-            />
-            <BenefitCard
-              icon={DollarSign}
-              title="ROI Guarantee"
-              description="We're so confident in our approach, we guarantee a 3:1 return on your investment within 6 months."
-            />
-            <BenefitCard
-              icon={Users}
-              title="Dedicated Team"
-              description="Your own dedicated team of growth specialists working exclusively on your success."
-            />
+            <BenefitCard icon={Award} title="Proven Track Record" description="We've helped 200+ businesses achieve sustainable growth with our battle-tested strategies." />
+            <BenefitCard icon={Clock} title="Rapid Implementation" description="See results in 90 days or less with our fast-track growth acceleration programs." />
+            <BenefitCard icon={DollarSign} title="ROI Guarantee" description="We're so confident in our approach, we guarantee a 3:1 return on your investment within 6 months." />
+            <BenefitCard icon={Users} title="Dedicated Team" description="Your own dedicated team of growth specialists working exclusively on your success." />
           </div>
           
           <div className="text-center">
@@ -347,11 +273,7 @@ const Index = () => {
           <div className="text-center mb-6">
             <h3 className="text-base sm:text-lg font-semibold text-muted-foreground mb-4">Trusted by Leading Platforms</h3>
             <div className="flex justify-center">
-              <img 
-                src="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/Partner-Logos-Meta-Google.webp" 
-                alt="Partner Logos - Meta and Google Certified Partners" 
-                className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
-              />
+              <img src="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/Partner-Logos-Meta-Google.webp" alt="Partner Logos - Meta and Google Certified Partners" className="max-w-full h-auto opacity-70 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
@@ -404,9 +326,7 @@ const Index = () => {
 
       {/* Lead Form Section */}
       <section ref={formRef} className="py-8 sm:py-10 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <LeadForm />
-        </div>
+        
       </section>
 
       {/* FAQ Section */}
@@ -428,8 +348,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
