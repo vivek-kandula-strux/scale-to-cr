@@ -198,7 +198,7 @@ serve(async (req) => {
     // Headers for the sheet (will be manually added to row 1)
     console.log('Expected headers: Timestamp, Name, Email, Phone, Business Type, Current Revenue, Desired Revenue, Challenge');
     
-    if (GOOGLE_SERVICE_ACCOUNT_JSON && SHEET_ID) {
+    if (GOOGLE_SERVICE_ACCOUNT_JSON && normalizedSheetId) {
       try {
         // Parse service account credentials
         const serviceAccount = JSON.parse(GOOGLE_SERVICE_ACCOUNT_JSON);
