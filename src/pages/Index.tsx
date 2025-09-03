@@ -29,34 +29,42 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <StickyNavbar onCtaClick={scrollToForm} />
       
-      {/* Hero Section - Mobile Optimized */}
-      <section className="pt-16 pb-8 px-3 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center">
-          <div className="max-w-5xl mx-auto mb-6 sm:mb-8">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
-              Leading Marketing Partner for Coaches, Creators & Ed Tech Brands.
+      {/* Hero Section - Modern 2025 Design */}
+      <section className="relative pt-16 pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 bg-gradient-hero"></div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-accent-primary/30 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-secondary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        
+        <div className="container mx-auto text-center relative z-10">
+          <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-4 sm:mb-6 leading-tight tracking-tight animate-fade-in">
+              Leading Marketing Partner for <span className="gradient-text">Coaches</span>, <span className="gradient-text">Creators</span> & Ed Tech Brands.
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 animate-slide-up" style={{animationDelay: '0.2s'}}>
               Scale your coaching & training business with Strux Digital's fully managed performance marketing services!
             </p>
           </div>
           
-          {/* Large Hero Image - Full Width */}
-          <div className="w-full flex justify-center mb-6 sm:mb-8 -mx-3 sm:-mx-6 lg:-mx-8">
-            <img 
-              src={heroClientLogos} 
-              alt="Hero Client Logo Collage" 
-              className="rounded-lg shadow-elevated w-full max-w-none sm:max-w-[95vw] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover"
-            />
+          {/* Large Hero Image - Enhanced */}
+          <div className="w-full flex justify-center mb-8 sm:mb-12 -mx-3 sm:-mx-6 lg:-mx-8 animate-scale-in" style={{animationDelay: '0.4s'}}>
+            <div className="relative">
+              <img 
+                src={heroClientLogos} 
+                alt="Hero Client Logo Collage" 
+                className="rounded-2xl shadow-elevated w-full max-w-none sm:max-w-[95vw] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 hover:opacity-10 transition-opacity duration-500"></div>
+            </div>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 sm:px-0">
+          <div className="max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2 sm:px-0">
               <Button 
-                variant="cta" 
-                size="lg"
+                variant="hero" 
+                size="xl"
                 onClick={scrollToForm}
-                className="w-full sm:w-auto min-h-[44px]"
+                className="w-full sm:w-auto min-h-[56px] text-lg"
               >
                 Get My Custom Growth Plan
               </Button>
@@ -65,12 +73,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Success Stories Section - Second Section */}
-      <section className="py-8 sm:py-10 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-2 sm:mb-3">Success Stories</h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+      {/* Success Stories Section - Glass Morphism Design */}
+      <section className="py-12 sm:py-16 relative">
+        <div className="absolute inset-0 glass-card"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-10 sm:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-card-foreground mb-3 sm:mb-4 animate-fade-in">
+              Success <span className="gradient-text">Stories</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{animationDelay: '0.1s'}}>
               Real results from real clients who've transformed their businesses with our proven systems.
             </p>
           </div>
@@ -121,21 +132,23 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
+            <Button variant="hero" size="xl" onClick={scrollToForm} className="animate-glow-pulse">
               Ready to Be Our Next Success Story?
             </Button>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section - Mobile Optimized */}
-      <section className="py-8 sm:py-10 px-3 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-3">
-              What We <span className="text-primary">Do</span>
+      {/* What We Do Section - Enhanced Modern Design */}
+      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 relative">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-tertiary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-10 sm:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-4">
+              What We <span className="gradient-text">Do</span>
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
               Our comprehensive approach combines strategy, execution, and optimization to deliver measurable growth for your business.
             </p>
           </div>

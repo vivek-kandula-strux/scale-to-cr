@@ -6,13 +6,13 @@ interface StickyNavbarProps {
 
 const StickyNavbar = ({ onCtaClick }: StickyNavbarProps) => {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass backdrop-blur-xl border-b border-white/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h2 className="text-xl font-bold text-foreground">
-              Strux <span className="text-primary">Digital</span>
+            <h2 className="text-xl font-display font-bold text-foreground">
+              Strux <span className="gradient-text">Digital</span>
             </h2>
           </div>
           
