@@ -20,26 +20,37 @@
     <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 500+ success stories. Free consultation available." />
     <meta name="twitter:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage.png" />
 
-    <!-- Modern 2025 Font Stack - Optimized -->
+    <!-- Optimized Font Loading - 2025 Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="//tidycal.com">
+    <!-- Critical fonts with display:swap for faster text rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Sora:wght@600;700&display=swap"></noscript>
     
-    <!-- Resource hints for performance -->
-    <link rel="prefetch" href="/src/components/TestimonialCard.tsx">
-    <link rel="prefetch" href="/src/components/FAQAccordion.tsx">
+    <!-- Preload critical hero image -->
+    <link rel="preload" href="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage.png" as="image" type="image/png">
+    <!-- Critical Performance & Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://okoooexnwtkdebpkfsku.supabase.co">
+    <link rel="dns-prefetch" href="https://tidycal.com">
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PRZ9NX4S');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Prefetch lazy-loaded components -->
+    <link rel="modulepreload" href="/src/components/LazyComponents.tsx">
+    <link rel="modulepreload" href="/src/components/TestimonialCard.tsx">
+    <link rel="modulepreload" href="/src/components/FAQAccordion.tsx">
+    
+    <!-- Deferred Google Tag Manager for Performance -->
+    <script>
+      // Defer GTM loading until after critical content loads
+      window.addEventListener('load', function() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PRZ9NX4S');
+      });
+    </script>
   </head>
 
   <body>

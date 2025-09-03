@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import StickyNavbar from "@/components/StickyNavbar";
@@ -11,17 +11,24 @@ import LeadForm from "@/components/LeadForm";
 import { 
   LazyFAQAccordion, 
   LazyTestimonialCard, 
-  LazyChallengeCard 
+  LazyChallengeCard,
+  LazyCaseStudyCard 
 } from "@/components/LazyComponents";
+import { LazyServiceCard, LazyBenefitCard } from "@/components/LazyServiceCard";
 import { 
   FAQSkeleton, 
   TestimonialSkeleton, 
   ChallengeSkeleton 
 } from "@/components/LoadingSkeletons";
+import ServiceCardSkeleton from "@/components/ServiceCardSkeleton";
 import { useClientLogos } from "@/hooks/useClientLogos";
+import { measurePerformance, preloadCriticalResources } from "@/utils/performance";
 
-// Lucide Icons
-import { Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, Shield, Rocket, DollarSign, Clock, Award, HeadphonesIcon, PieChart, Settings, AlertTriangle, BrainCircuit, Smartphone, Globe, PlayCircle } from "lucide-react";
+// Optimized Lucide Icons - Only import what's used
+import { 
+  Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, 
+  Rocket, DollarSign, Clock, Award, Settings, AlertTriangle, BrainCircuit 
+} from "lucide-react";
 
 // Images - Using Supabase Storage URLs
 const heroClientLogos = "https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage.png";
@@ -32,6 +39,12 @@ import caseStudy2 from "@/assets/case-study-2.jpg";
 
 const Index = () => {
   const { data: clientLogos } = useClientLogos();
+  
+  // Performance monitoring
+  useEffect(() => {
+    measurePerformance();
+    preloadCriticalResources();
+  }, []);
   
   const handleCtaClick = () => {
     window.open('https://tidycal.com/struxdigital/strux-discovery-call-email', '_blank');
@@ -82,12 +95,20 @@ const Index = () => {
             </p>
           </div>
           
-          {/* Large Hero Image - Enhanced */}
+          {/* Optimized Hero Image - Performance Enhanced */}
           <div className="w-full flex justify-center mb-8 sm:mb-12 animate-scale-in" style={{
           animationDelay: '0.4s'
         }}>
             <div className="relative max-w-full">
-              <img src={heroClientLogos} alt="Hero Client Logo Collage" className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700" />
+              <img 
+                src={heroClientLogos} 
+                alt="Hero Client Logo Collage showcasing 500+ successful clients of Strux Digital"
+                width="1200"
+                height="600" 
+                className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
+                loading="eager"
+                fetchPriority="high"
+              />
               <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 hover:opacity-10 transition-opacity duration-500"></div>
             </div>
           </div>
@@ -165,12 +186,24 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 sm:mb-10">
-            <ServiceCard icon={TrendingUp} title="Digital Marketing Strategy" description="Data-driven marketing campaigns across all channels to maximize ROI and customer acquisition." />
-            <ServiceCard icon={Target} title="Sales Process Optimization" description="Streamline your sales funnel to convert more leads and increase average transaction values." />
-            <ServiceCard icon={Users} title="Team & Operations Scaling" description="Build systems and hire the right people to support sustainable business growth." />
-            <ServiceCard icon={BarChart3} title="Performance Analytics" description="Track, measure, and optimize every aspect of your business for continuous improvement." />
-            <ServiceCard icon={Rocket} title="Growth Strategy Development" description="Custom roadmaps designed specifically for your industry and growth objectives." />
-            <ServiceCard icon={CheckCircle} title="Implementation Support" description="Hands-on support to ensure strategies are executed properly and deliver results." />
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={TrendingUp} title="Digital Marketing Strategy" description="Data-driven marketing campaigns across all channels to maximize ROI and customer acquisition." />
+            </Suspense>
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={Target} title="Sales Process Optimization" description="Streamline your sales funnel to convert more leads and increase average transaction values." />
+            </Suspense>
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={Users} title="Team & Operations Scaling" description="Build systems and hire the right people to support sustainable business growth." />
+            </Suspense>
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={BarChart3} title="Performance Analytics" description="Track, measure, and optimize every aspect of your business for continuous improvement." />
+            </Suspense>
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={Rocket} title="Growth Strategy Development" description="Custom roadmaps designed specifically for your industry and growth objectives." />
+            </Suspense>
+            <Suspense fallback={<ServiceCardSkeleton />}>
+              <LazyServiceCard icon={CheckCircle} title="Implementation Support" description="Hands-on support to ensure strategies are executed properly and deliver results." />
+            </Suspense>
           </div>
           
           <div className="text-center">
