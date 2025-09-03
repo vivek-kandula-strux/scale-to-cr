@@ -26,11 +26,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section - Modern 2025 Design */}
-      <section className="relative pt-16 pb-12 px-3 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-gradient-hero"></div>
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent-primary/30 rounded-full filter blur-3xl animate-float"></div>
@@ -47,12 +47,12 @@ const Index = () => {
           </div>
           
           {/* Large Hero Image - Enhanced */}
-          <div className="w-full flex justify-center mb-8 sm:mb-12 -mx-3 sm:-mx-6 lg:-mx-8 animate-scale-in" style={{animationDelay: '0.4s'}}>
-            <div className="relative">
+          <div className="w-full flex justify-center mb-8 sm:mb-12 animate-scale-in" style={{animationDelay: '0.4s'}}>
+            <div className="relative max-w-full">
               <img 
                 src={heroClientLogos} 
                 alt="Hero Client Logo Collage" 
-                className="rounded-2xl shadow-elevated w-full max-w-none sm:max-w-[95vw] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
+                className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 rounded-2xl bg-gradient-primary opacity-0 hover:opacity-10 transition-opacity duration-500"></div>
             </div>
@@ -140,7 +140,7 @@ const Index = () => {
       </section>
 
       {/* What We Do Section - Enhanced Modern Design */}
-      <section className="py-12 sm:py-16 px-3 sm:px-6 lg:px-8 relative">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-tertiary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -195,7 +195,7 @@ const Index = () => {
       </section>
 
       {/* Partnership Value Stack - Mobile Optimized */}
-      <section className="py-8 sm:py-10 px-3 sm:px-6 lg:px-8 bg-card">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8 bg-card">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-2 sm:mb-3">
@@ -238,7 +238,7 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us - Mobile Optimized */}
-      <section className="py-8 sm:py-10 px-3 sm:px-6 lg:px-8">
+      <section className="py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-3">
