@@ -443,13 +443,6 @@ const Index = () => {
               <h4 className="text-lg font-bold text-foreground mb-2">Scaling System</h4>
               <p className="text-muted-foreground text-sm max-w-xs">Predictable growth framework</p>
             </div>
-            <div className="text-center group">
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:shadow-glow transition-all duration-300">
-                <HeadphonesIcon className="w-8 h-8 text-primary-foreground" />
-              </div>
-              <h4 className="text-lg font-bold text-foreground mb-2">24/7 Support</h4>
-              <p className="text-muted-foreground text-sm max-w-xs">Direct access to our team</p>
-            </div>
           </div>
         </div>
       </section>
