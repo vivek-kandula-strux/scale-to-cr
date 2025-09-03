@@ -21,10 +21,10 @@ import {
   ChallengeSkeleton 
 } from "@/components/LoadingSkeletons";
 import ServiceCardSkeleton from "@/components/ServiceCardSkeleton";
-import { getClientImageUrl } from "@/data/clientLogos";
+import { useClientLogos } from "@/hooks/useClientLogos";
 import { measurePerformance, preloadCriticalResources } from "@/utils/performance";
 
-// Optimized Lucide Icons - Tree shaken and lazy loaded
+// Optimized Lucide Icons - Only import what's used
 import { 
   Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, 
   Rocket, DollarSign, Clock, Award, Settings, AlertTriangle, Cpu 
@@ -37,9 +37,9 @@ import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 
-import OptimizedImage from "@/components/OptimizedImage";
-
 const Index = () => {
+  const { data: clientLogos } = useClientLogos();
+  
   // Performance monitoring
   useEffect(() => {
     measurePerformance();
@@ -48,6 +48,12 @@ const Index = () => {
   
   const handleCtaClick = () => {
     window.open('https://tidycal.com/struxdigital/strux-discovery-call-email', '_blank');
+  };
+
+  // Helper function to get client image URL by name
+  const getClientImageUrl = (name: string) => {
+    const client = clientLogos?.find(logo => logo.name === name);
+    return client?.image_url || '/placeholder.svg';
   };
 
   return (
@@ -94,11 +100,11 @@ const Index = () => {
           animationDelay: '0.4s'
         }}>
             <div className="relative max-w-full">
-              <OptimizedImage 
-                src={heroClientLogos}
+              <img 
+                src={heroClientLogos} 
                 alt="Hero Client Logo Collage showcasing 500+ successful clients of Strux Digital"
-                width={1200}
-                height={600}
+                width="1200"
+                height="600" 
                 className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
                 loading="eager"
                 fetchPriority="high"

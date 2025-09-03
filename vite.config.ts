@@ -22,61 +22,48 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: (id) => {
-          // React and React DOM
-          if (id.includes('react') && !id.includes('@')) {
-            return 'react-vendor';
-          }
+        manualChunks: {
+          // Core React
+          vendor: ['react', 'react-dom'],
           
-          // Radix UI components
-          if (id.includes('@radix-ui')) {
-            return 'radix-ui';
-          }
+          // React Query and routing
+          query: ['@tanstack/react-query', 'react-router-dom'],
           
           // Supabase
-          if (id.includes('@supabase')) {
-            return 'supabase';
-          }
+          supabase: ['@supabase/supabase-js'],
           
-          // React Query
-          if (id.includes('@tanstack/react-query')) {
-            return 'react-query';
-          }
+          // Form handling
+          forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
           
-          // Lucide icons - split into separate chunk
-          if (id.includes('lucide-react')) {
-            return 'lucide-icons';
-          }
+          // UI Framework - split by usage frequency
+          'ui-core': [
+            '@radix-ui/react-slot',
+            '@radix-ui/react-tooltip',
+            'class-variance-authority',
+            'clsx',
+            'tailwind-merge'
+          ],
+          'ui-components': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-toast',
+            'sonner'
+          ],
+          'ui-advanced': [
+            '@radix-ui/react-select',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-scroll-area'
+          ],
           
-          // Form libraries
-          if (id.includes('react-hook-form') || id.includes('@hookform')) {
-            return 'form-libs';
-          }
+          // Icons - only import what's used
+          icons: ['lucide-react'],
           
-          // Router
-          if (id.includes('react-router')) {
-            return 'router';
-          }
-          
-          // Other vendor packages
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        }
-      }
+          // Utilities
+          utils: ['date-fns', 'date-fns-tz', 'react-helmet-async']
+        },
+      },
     },
     chunkSizeWarningLimit: 1000,
-    target: 'esnext',
-    // Only use terser in production for better performance
-    ...(mode === 'production' && {
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-          pure_funcs: ['console.log']
-        }
-      }
-    })
-  }
+  },
 }));
