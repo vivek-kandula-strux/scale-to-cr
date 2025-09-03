@@ -107,6 +107,26 @@ const Debug = () => {
     }
   };
 
+  const checkSheetsConfig = async () => {
+    setIsCheckingConfig(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-to-sheets', {
+        body: { mode: 'check-config' }
+      });
+      if (error) {
+        toast({ title: 'Config Check Failed', description: error.message, variant: 'destructive' });
+        return;
+      }
+      setConfigStatus(data);
+      setConnectionStatus((prev) => ({ ...prev, message: data?.message || 'Configuration checked' }));
+      toast({ title: 'Configuration Checked', description: data?.message || 'See details below.' });
+    } catch (err) {
+      toast({ title: 'Config Check Error', description: String(err), variant: 'destructive' });
+    } finally {
+      setIsCheckingConfig(false);
+    }
+  };
+
   const submitTestData = async () => {
     setIsSubmittingTest(true);
     
@@ -207,6 +227,71 @@ const Debug = () => {
               <div className="p-3 bg-muted rounded-md">
                 <p className="text-sm text-muted-foreground">{connectionStatus.message}</p>
               </div>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Google Sheets Configuration */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              Google Sheets Configuration
+              <Button onClick={checkSheetsConfig} disabled={isCheckingConfig} size="sm" variant="outline">
+                {isCheckingConfig ? 'Checking...' : 'Check Configuration'}
+              </Button>
+            </CardTitle>
+            <CardDescription>Verify that your Google Sheets setup is correct</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {configStatus ? (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Service Account</span>
+                  {configStatus.serviceAccountConfigured ? (
+                    <Badge variant="default">Configured</Badge>
+                  ) : (
+                    <Badge variant="destructive">Missing</Badge>
+                  )}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Google Sheet ID</span>
+                  {configStatus.sheetIdConfigured ? (
+                    <Badge variant="default">Configured</Badge>
+                  ) : (
+                    <Badge variant="destructive">Missing</Badge>
+                  )}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-medium">Access Token Exchange</span>
+                  {configStatus.tokenOk ? (
+                    <Badge variant="default">OK</Badge>
+                  ) : (
+                    <Badge variant="destructive">Failed</Badge>
+                  )}
+                </div>
+                {configStatus.clientEmail && (
+                  <div className="text-sm text-muted-foreground">
+                    Service account email: <code>{configStatus.clientEmail}</code>
+                  </div>
+                )}
+                {configStatus.sheetUrl && (
+                  <div className="text-sm text-muted-foreground">
+                    Target sheet: <a className="underline" href={configStatus.sheetUrl} target="_blank" rel="noreferrer">{String(configStatus.sheetUrl)}</a>
+                  </div>
+                )}
+                {configStatus.hint && (
+                  <div className="p-3 bg-muted rounded-md text-sm text-muted-foreground">
+                    {configStatus.hint}
+                  </div>
+                )}
+                {configStatus.tokenError && (
+                  <div className="p-3 bg-muted rounded-md text-sm text-muted-foreground">
+                    Token error: {String(configStatus.tokenError)}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <p className="text-sm text-muted-foreground">Click "Check Configuration" to see details.</p>
             )}
           </CardContent>
         </Card>
