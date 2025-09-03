@@ -30,17 +30,23 @@ const Index = () => {
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section - Mobile Optimized */}
-      <section className="pt-20 pb-12 px-3 sm:px-6 lg:px-8">
+      <section className="pt-16 pb-8 px-3 sm:px-6 lg:px-8">
         <div className="container mx-auto text-center max-w-6xl">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
-              Transform Your Business Into a 
-              <span className="text-primary"> Growth Machine</span>
+          <div className="max-w-5xl mx-auto">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
+              Leading Marketing Partner for Coaches, Creators & Ed Tech Brands.
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
-              We help ambitious businesses scale from 6-figures to 7+ figures through proven digital marketing strategies, sales optimization, and operational excellence.
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+              Scale your coaching & training business with Strux Digital's fully managed performance marketing services!
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-2 sm:px-0">
+            <div className="flex justify-center px-2 sm:px-0 mb-6 sm:mb-8">
+              <img 
+                src={heroClientLogos} 
+                alt="Hero Client Logo Collage" 
+                className="rounded-lg shadow-elevated w-full max-w-full sm:max-w-2xl md:max-w-4xl lg:max-w-5xl"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-2 sm:px-0">
               <Button 
                 variant="cta" 
                 size="lg"
@@ -49,13 +55,6 @@ const Index = () => {
               >
                 Get My Custom Growth Plan
               </Button>
-            </div>
-            <div className="flex justify-center px-2 sm:px-0">
-              <img 
-                src={heroClientLogos} 
-                alt="Hero Client Logo Collage" 
-                className="rounded-lg shadow-elevated w-full max-w-full sm:max-w-xl md:max-w-2xl"
-              />
             </div>
           </div>
         </div>
