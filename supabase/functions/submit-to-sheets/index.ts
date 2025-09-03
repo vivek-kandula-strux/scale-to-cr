@@ -300,7 +300,8 @@ serve(async (req) => {
             success: true, 
             message: 'Successfully saved to database and Google Sheets',
             dbData,
-            sheetsResult 
+            sheetsResult,
+            usedRange: targetRange
           }), 
           { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );
