@@ -7,6 +7,33 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Helper: get service account creds from JSON or separate email/key
+function getServiceAccountCreds(): { client_email: string; private_key: string } | null {
+  const json = Deno.env.get('GOOGLE_SERVICE_ACCOUNT_JSON');
+  if (json) {
+    try {
+      const parsed = JSON.parse(json);
+      if (parsed?.client_email && parsed?.private_key) {
+        return {
+          client_email: String(parsed.client_email),
+          private_key: String(parsed.private_key).replace(/\\n/g, '\n'),
+        };
+      }
+    } catch (_) {
+      // fallthrough to separate vars
+    }
+  }
+  const email = Deno.env.get('GOOGLE_SHEETS_CLIENT_EMAIL');
+  const key = Deno.env.get('GOOGLE_SHEETS_PRIVATE_KEY');
+  if (email && key) {
+    return {
+      client_email: email,
+      private_key: key.replace(/\\n/g, '\n'),
+    };
+  }
+  return null;
+}
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -38,16 +65,16 @@ serve(async (req) => {
     // If only checking configuration, validate Google Sheets setup without DB insert
     if (mode === 'check-config') {
       try {
-        const GOOGLE_SERVICE_ACCOUNT_JSON = Deno.env.get('GOOGLE_SERVICE_ACCOUNT_JSON');
         const SHEET_ID_RAW = Deno.env.get('GOOGLE_SHEET_ID');
         const SHEET_RANGE = Deno.env.get('GOOGLE_SHEET_RANGE') || 'Sheet1!A:H';
         const normalizedSheetId = SHEET_ID_RAW?.includes('docs.google.com')
           ? (SHEET_ID_RAW.match(/\/d\/([a-zA-Z0-9-_]+)/)?.[1] || SHEET_ID_RAW)
           : SHEET_ID_RAW;
 
+        const creds = getServiceAccountCreds();
         const status: Record<string, unknown> = {
           success: true,
-          serviceAccountConfigured: !!GOOGLE_SERVICE_ACCOUNT_JSON,
+          serviceAccountConfigured: !!creds,
           sheetIdConfigured: !!normalizedSheetId,
           sheetRange: SHEET_RANGE,
           sheetUrl: normalizedSheetId ? `https://docs.google.com/spreadsheets/d/${normalizedSheetId}/edit` : null,
@@ -57,15 +84,14 @@ serve(async (req) => {
         let tokenOk = false;
         let tokenError: string | null = null;
 
-        if (GOOGLE_SERVICE_ACCOUNT_JSON) {
+        if (creds) {
           try {
-            const serviceAccount = JSON.parse(GOOGLE_SERVICE_ACCOUNT_JSON);
-            clientEmail = serviceAccount?.client_email || null;
+            clientEmail = creds.client_email || null;
 
             // Create JWT for OAuth2
             const now = Math.floor(Date.now() / 1000);
             const payload = {
-              iss: serviceAccount.client_email,
+              iss: creds.client_email,
               scope: 'https://www.googleapis.com/auth/spreadsheets',
               aud: 'https://oauth2.googleapis.com/token',
               exp: now + 3600,
@@ -76,10 +102,10 @@ serve(async (req) => {
             const headerB64 = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
             const payloadB64 = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
 
-            if (!serviceAccount?.private_key || !serviceAccount?.client_email) {
-              throw new Error('Invalid Google Service Account JSON: missing private_key or client_email');
+            if (!creds.private_key || !creds.client_email) {
+              throw new Error('Invalid Google Service Account credentials: missing private_key or client_email');
             }
-            const privateKeyPem = String(serviceAccount.private_key).replace(/\\n/g, '\n');
+            const privateKeyPem = String(creds.private_key).replace(/\\n/g, '\n');
             const keyData = privateKeyPem.replace(/-----BEGIN PRIVATE KEY-----|\n|-----END PRIVATE KEY-----/g, '');
             const keyBytes = Uint8Array.from(atob(keyData), c => c.charCodeAt(0));
 
@@ -181,16 +207,16 @@ serve(async (req) => {
     ];
 
     // Submit to Google Sheets using Service Account
-    const GOOGLE_SERVICE_ACCOUNT_JSON = Deno.env.get('GOOGLE_SERVICE_ACCOUNT_JSON');
     const SHEET_ID_RAW = Deno.env.get('GOOGLE_SHEET_ID');
     const SHEET_RANGE = Deno.env.get('GOOGLE_SHEET_RANGE') || 'Sheet1!A:H';
+    const creds = getServiceAccountCreds();
     
     const normalizedSheetId = SHEET_ID_RAW?.includes('docs.google.com')
       ? (SHEET_ID_RAW.match(/\/d\/([a-zA-Z0-9-_]+)/)?.[1] || SHEET_ID_RAW)
       : SHEET_ID_RAW;
     
     console.log('Google Sheets Configuration:');
-    console.log(`- Service Account configured: ${GOOGLE_SERVICE_ACCOUNT_JSON ? 'Yes' : 'No'}`);
+    console.log(`- Service Account configured: ${creds ? 'Yes' : 'No'}`);
     console.log(`- Sheet ID configured: ${normalizedSheetId ? 'Yes' : 'No'}`);
     console.log(`- Target range: ${SHEET_RANGE}`);
     console.log(`- Target URL: ${normalizedSheetId ? `https://docs.google.com/spreadsheets/d/${normalizedSheetId}/edit` : 'Not configured'}`);
@@ -198,10 +224,10 @@ serve(async (req) => {
     // Headers for the sheet (will be manually added to row 1)
     console.log('Expected headers: Timestamp, Name, Email, Phone, Business Type, Current Revenue, Desired Revenue, Challenge');
     
-    if (GOOGLE_SERVICE_ACCOUNT_JSON && normalizedSheetId) {
+    if (creds && normalizedSheetId) {
       try {
-        // Parse service account credentials
-        const serviceAccount = JSON.parse(GOOGLE_SERVICE_ACCOUNT_JSON);
+        // Use service account credentials (JSON or separate email/key)
+        const serviceAccount = creds as { client_email: string; private_key: string };
         
         // Create JWT for Google OAuth2
         const now = Math.floor(Date.now() / 1000);
@@ -301,7 +327,7 @@ serve(async (req) => {
             message: 'Successfully saved to database and Google Sheets',
             dbData,
             sheetsResult,
-            usedRange: targetRange
+            usedRange: SHEET_RANGE
           }), 
           { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
         );

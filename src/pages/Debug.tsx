@@ -411,6 +411,7 @@ const Debug = () => {
               <h4 className="font-semibold mb-2">Required Secrets:</h4>
               <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
                 <li><code>GOOGLE_SERVICE_ACCOUNT_JSON</code> - Your Google Service Account JSON key</li>
+                <li className="text-xs">Alternatively set both: <code>GOOGLE_SHEETS_CLIENT_EMAIL</code> and <code>GOOGLE_SHEETS_PRIVATE_KEY</code></li>
                 <li><code>GOOGLE_SHEET_ID</code> - The ID from your Google Sheet URL</li>
                 <li><code>GOOGLE_SHEET_RANGE</code> - Optional: Target range (default: Sheet1!A:H)</li>
               </ul>
