@@ -357,51 +357,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="py-8 sm:py-10 bg-card">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-2 sm:mb-3">Real Results from Real Clients</h2>
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-              These transformation stories show exactly what's possible when you have the right strategy and execution.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
-            <CaseStudyCard image={caseStudy1} clientName="Success Coaching Academy" industry="Online Coaching" beforeRevenue="₹8L" afterRevenue="₹85L" timeframe="7 months" story="Struggled with inconsistent lead flow despite good content. We implemented our proven funnel system and scaled their Facebook ads, resulting in 10x revenue growth." />
-            <CaseStudyCard image={caseStudy2} clientName="Digital Growth Consultancy" industry="Business Consulting" beforeRevenue="₹15L" afterRevenue="₹1.8CR" timeframe="10 months" story="Had a proven service but couldn't scale effectively. Our automation systems and strategic ad campaigns helped them achieve sustainable growth to 8-figures." />
-            <div className="bg-background backdrop-blur-sm p-6 rounded-lg shadow-card flex flex-col justify-between border border-border hover:border-primary/30 transition-all duration-300">
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-foreground mb-2">Your Business Could Be Next</h4>
-                <p className="text-muted-foreground mb-4">
-                  Every success story started with a single decision to invest in proven growth systems.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-2 bg-primary/10 rounded border border-primary/20">
-                  <span className="text-foreground font-semibold">Average Growth:</span>
-                  <span className="text-primary font-bold">800%+</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-primary/10 rounded border border-primary/20">
-                  <span className="text-foreground font-semibold">Time to Results:</span>
-                  <span className="text-primary font-bold">60-90 days</span>
-                </div>
-                <div className="flex justify-between items-center p-2 bg-primary/10 rounded border border-primary/20">
-                  <span className="text-foreground font-semibold">Success Rate:</span>
-                  <span className="text-primary font-bold">95%+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
-              Ready to Transform Your Business?
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Offer Recap Section */}
       <section className="py-8 sm:py-10 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
