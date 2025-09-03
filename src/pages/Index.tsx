@@ -251,11 +251,7 @@ const Index = () => {
               <h3 className="text-lg font-bold text-foreground mb-2">Revenue ceiling</h3>
               <p className="text-muted-foreground">Stuck at the same revenue level despite working harder</p>
             </div>
-            <div className="bg-background p-6 rounded-lg shadow-card border-l-4 border-primary hover:shadow-glow transition-all duration-300">
-              <Clock className="w-8 h-8 text-primary mb-4" />
-              <h3 className="text-lg font-bold text-foreground mb-2">Time constraints</h3>
-              <p className="text-muted-foreground">No time to focus on marketing while running your business</p>
-            </div>
+            
           </div>
           
           <div className="text-center">
