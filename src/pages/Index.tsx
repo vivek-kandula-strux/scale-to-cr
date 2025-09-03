@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 
 // Images - Using Supabase Storage URLs
-const heroClientLogos = "https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage.png";
+const heroClientLogos = "https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage%20(1).webp";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";

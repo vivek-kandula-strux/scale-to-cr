@@ -27,7 +27,7 @@ export const preloadCriticalResources = () => {
   if (typeof window !== 'undefined') {
     // Preload critical images
     const heroImage = new Image();
-    heroImage.src = "https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage.png";
+    heroImage.src = "https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/Client%20Logos/Hero%20Client%20Logo%20Collage%20(1).webp";
     
     // Preload critical fonts
     const fontLink = document.createElement('link');
