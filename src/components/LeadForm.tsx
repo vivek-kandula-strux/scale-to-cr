@@ -91,18 +91,18 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="bg-card p-4 sm:p-6 md:p-8 rounded-lg border border-border shadow-elevated max-w-2xl mx-auto">
-      <div className="text-center mb-4 sm:mb-6">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-card-foreground mb-2">
+    <div className="bg-card p-6 sm:p-8 md:p-10 rounded-2xl border border-border shadow-elevated max-w-3xl mx-auto">
+      <div className="text-center mb-6 sm:mb-8">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-card-foreground mb-3">
           Get Your Custom Growth Plan
         </h3>
-        <p className="text-sm sm:text-base text-muted-foreground px-2 sm:px-0">
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
           Tell us about your business and we'll create a personalized strategy for your growth.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Name */}
           <div className="space-y-2">
             <Label htmlFor="name" className="text-card-foreground font-semibold text-sm">
@@ -113,7 +113,7 @@ const LeadForm = () => {
               value={formData.name}
               onChange={(e) => handleChange("name", e.target.value)}
               placeholder="Enter your full name"
-              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground h-12 text-base"
               required
             />
           </div>
@@ -129,7 +129,7 @@ const LeadForm = () => {
               value={formData.email}
               onChange={(e) => handleChange("email", e.target.value)}
               placeholder="your@email.com"
-              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground h-12 text-base"
               required
             />
           </div>
@@ -145,7 +145,7 @@ const LeadForm = () => {
               value={formData.phone}
               onChange={(e) => handleChange("phone", e.target.value)}
               placeholder="+91 9876543210"
-              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
+              className="bg-background border-border focus:border-primary text-foreground placeholder:text-muted-foreground h-12 text-base"
               required
             />
           </div>
@@ -229,8 +229,8 @@ const LeadForm = () => {
         <Button 
           type="submit" 
           variant="cta" 
-          size="lg" 
-          className="w-full min-h-[44px]"
+          size="xl" 
+          className="w-full min-h-[56px] text-base sm:text-lg font-bold"
           disabled={isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Get My Custom Growth Plan"}

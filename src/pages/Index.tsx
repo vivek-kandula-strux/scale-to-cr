@@ -30,7 +30,7 @@ const Index = () => {
       <StickyNavbar onCtaClick={scrollToForm} />
       
       {/* Hero Section - Modern 2025 Design */}
-      <section className="relative pt-16 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-20 pb-16 px-3 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 bg-gradient-hero"></div>
         <div className="absolute top-0 left-0 w-72 h-72 bg-accent-primary/30 rounded-full filter blur-3xl animate-float"></div>
@@ -38,10 +38,10 @@ const Index = () => {
         
         <div className="container mx-auto text-center relative z-10">
           <div className="max-w-5xl mx-auto mb-8 sm:mb-12">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-4 sm:mb-6 leading-tight tracking-tight animate-fade-in">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-foreground mb-6 sm:mb-6 leading-[1.1] tracking-tight animate-fade-in">
               Leading Marketing Partner for <span className="gradient-text">Coaches</span>, <span className="gradient-text">Creators</span> & Ed Tech Brands.
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-2 sm:px-0 animate-slide-up" style={{animationDelay: '0.2s'}}>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{animationDelay: '0.2s'}}>
               Scale your coaching & training business with Strux Digital's fully managed performance marketing services!
             </p>
           </div>
@@ -59,12 +59,12 @@ const Index = () => {
           </div>
           
           <div className="max-w-5xl mx-auto animate-fade-in" style={{animationDelay: '0.6s'}}>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-2 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               <Button 
                 variant="hero" 
                 size="xl"
                 onClick={scrollToForm}
-                className="w-full sm:w-auto min-h-[56px] text-lg"
+                className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8"
               >
                 Get My Custom Growth Plan
               </Button>
@@ -74,9 +74,9 @@ const Index = () => {
       </section>
 
       {/* Success Stories Section - Glass Morphism Design */}
-      <section className="py-12 sm:py-16 relative">
+      <section className="py-16 sm:py-20 relative">
         <div className="absolute inset-0 glass-card"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10 sm:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-card-foreground mb-3 sm:mb-4 animate-fade-in">
               Success <span className="gradient-text">Stories</span>
@@ -86,7 +86,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12">
             <TestimonialCard 
               image="/placeholder.svg" 
               name="Lokesh Lalwani" 
@@ -140,7 +140,7 @@ const Index = () => {
       </section>
 
       {/* What We Do Section - Enhanced Modern Design */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 relative">
+      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-tertiary/20 rounded-full filter blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -153,7 +153,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 sm:mb-10">
             <ServiceCard
               icon={TrendingUp}
               title="Digital Marketing Strategy"
