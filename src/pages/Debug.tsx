@@ -323,8 +323,9 @@ const Debug = () => {
             <div>
               <h4 className="font-semibold mb-2">Required Secrets:</h4>
               <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                <li><code>GOOGLE_SHEETS_API_KEY</code> - Your Google Sheets API key</li>
+                <li><code>GOOGLE_SERVICE_ACCOUNT_JSON</code> - Your Google Service Account JSON key</li>
                 <li><code>GOOGLE_SHEET_ID</code> - The ID from your Google Sheet URL</li>
+                <li><code>GOOGLE_SHEET_RANGE</code> - Optional: Target range (default: Sheet1!A:H)</li>
               </ul>
             </div>
             
@@ -333,9 +334,10 @@ const Debug = () => {
             <div>
               <h4 className="font-semibold mb-2">Sheet Setup:</h4>
               <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                <li>Target: <code>Sheet1</code> tab, columns A-H</li>
+                <li>Target: <code>Sheet1</code> tab, columns A-H (configurable via GOOGLE_SHEET_RANGE)</li>
                 <li>Add headers in row 1: Timestamp | Name | Email | Phone | Business Type | Current Revenue | Desired Revenue | Challenge</li>
                 <li>Data will be appended starting from row 2</li>
+                <li>Share your Google Sheet with the service account email (client_email from JSON)</li>
               </ul>
             </div>
             
