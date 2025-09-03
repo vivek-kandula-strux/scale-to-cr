@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import StickyNavbar from "@/components/StickyNavbar";
 import ServiceCard from "@/components/ServiceCard";
@@ -18,13 +17,12 @@ import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
+
 const Index = () => {
-  const formRef = useRef<HTMLDivElement>(null);
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({
-      behavior: 'smooth'
-    });
+  const handleCtaClick = () => {
+    window.open('https://tidycal.com/struxdigital/strux-discovery-call-email', '_blank');
   };
+
   return <div className="min-h-screen bg-background overflow-x-hidden">
       <StickyNavbar />
       
@@ -63,7 +61,7 @@ const Index = () => {
           animationDelay: '0.6s'
         }}>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              <Button variant="hero" size="xl" onClick={scrollToForm} className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8">
+              <Button variant="hero" size="xl" onClick={handleCtaClick} className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8">
                 Get My Custom Growth Plan
               </Button>
             </div>
@@ -96,7 +94,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="hero" size="xl" onClick={scrollToForm} className="animate-glow-pulse w-full max-w-md mx-auto px-4 py-3 text-sm sm:text-base">
+            <Button variant="hero" size="xl" onClick={handleCtaClick} className="animate-glow-pulse w-full max-w-md mx-auto px-4 py-3 text-sm sm:text-base">
               Ready to Be Our Next Success Story?
             </Button>
           </div>
@@ -129,7 +127,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
+            <Button variant="cta" size="lg" onClick={handleCtaClick} className="min-h-[44px]">
               Start Your Transformation
             </Button>
           </div>
@@ -156,7 +154,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
+            <Button variant="cta" size="lg" onClick={handleCtaClick} className="min-h-[44px]">
               Start Your Transformation
             </Button>
           </div>
@@ -208,7 +206,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm} className="min-h-[44px]">
+            <Button variant="cta" size="lg" onClick={handleCtaClick} className="min-h-[44px]">
               Get Your Custom Growth Plan
             </Button>
           </div>
@@ -255,7 +253,7 @@ const Index = () => {
           </div>
           
           <div className="text-center">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
+            <Button variant="cta" size="lg" onClick={handleCtaClick}>
               Get Solutions to These Challenges
             </Button>
           </div>
@@ -320,11 +318,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Lead Form Section */}
-      <section ref={formRef} className="py-8 sm:py-10 bg-card">
-        
-      </section>
-
       {/* FAQ Section */}
       <section className="py-8 sm:py-10 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -338,7 +331,7 @@ const Index = () => {
           <FAQAccordion />
           
           <div className="text-center mt-8 sm:mt-10">
-            <Button variant="cta" size="lg" onClick={scrollToForm}>
+            <Button variant="cta" size="lg" onClick={handleCtaClick}>
               Ready to Get Started? Let's Talk
             </Button>
           </div>
@@ -346,4 +339,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
