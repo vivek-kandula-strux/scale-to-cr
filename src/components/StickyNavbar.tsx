@@ -11,16 +11,9 @@ const StickyNavbar = ({ onCtaClick }: StickyNavbarProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <div className="flex items-center gap-3">
-              <img 
-                src="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/Skill%20Nerchuko%20%20(1).webp" 
-                alt="Strux Digital Logo" 
-                className="h-8 w-8 object-contain"
-              />
-              <h2 className="text-xl font-display font-bold text-foreground">
-                Strux <span className="gradient-text">Digital</span>
-              </h2>
-            </div>
+            <h2 className="text-xl font-display font-bold text-foreground">
+              Strux <span className="gradient-text">Digital</span>
+            </h2>
           </div>
           
           {/* CTA Button */}
