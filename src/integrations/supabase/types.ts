@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      authorized_lead_users: {
+        Row: {
+          created_at: string
+          granted_by: string | null
+          id: string
+          role: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          granted_by?: string | null
+          id?: string
+          role?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          granted_by?: string | null
+          id?: string
+          role?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       lead_submissions: {
         Row: {
           business_type: string | null
@@ -91,6 +118,10 @@ export type Database = {
           _role: Database["public"]["Enums"]["app_role"]
           _user_id: string
         }
+        Returns: boolean
+      }
+      is_admin_user: {
+        Args: { _user_id: string }
         Returns: boolean
       }
       is_authorized_user: {
