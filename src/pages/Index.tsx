@@ -37,6 +37,8 @@ import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";
 import caseStudy2 from "@/assets/case-study-2.jpg";
 
+import OptimizedImage from "@/components/OptimizedImage";
+
 const Index = () => {
   // Performance monitoring
   useEffect(() => {
@@ -92,11 +94,11 @@ const Index = () => {
           animationDelay: '0.4s'
         }}>
             <div className="relative max-w-full">
-              <img 
-                src={heroClientLogos} 
+              <OptimizedImage 
+                src={heroClientLogos}
                 alt="Hero Client Logo Collage showcasing 500+ successful clients of Strux Digital"
-                width="1200"
-                height="600" 
+                width={1200}
+                height={600}
                 className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
                 loading="eager"
                 fetchPriority="high"
