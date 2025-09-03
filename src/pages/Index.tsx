@@ -13,7 +13,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import { Target, Zap, TrendingUp, CheckCircle, Users, BarChart3, Shield, Rocket, DollarSign, Clock, Award, HeadphonesIcon, PieChart, Settings, AlertTriangle, BrainCircuit, Smartphone, Globe, PlayCircle } from "lucide-react";
 
 // Images
-import heroTeam from "@/assets/hero-team.jpg";
+import heroClientLogos from "@/assets/hero-client-logos.jpg";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
 import caseStudy1 from "@/assets/case-study-1.jpg";
@@ -52,8 +52,8 @@ const Index = () => {
             </div>
             <div className="flex justify-center px-2 sm:px-0">
               <img 
-                src={heroTeam} 
-                alt="Professional team consultation" 
+                src={heroClientLogos} 
+                alt="Hero Client Logo Collage" 
                 className="rounded-lg shadow-elevated w-full max-w-full sm:max-w-xl md:max-w-2xl"
               />
             </div>
