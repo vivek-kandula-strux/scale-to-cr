@@ -18,7 +18,10 @@ const TestimonialCard = ({ image, name, business, testimonial, result }: Testimo
               alt={name}
               className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-primary/50 flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+            <div 
+              className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 bg-cover bg-center"
+              style={{ backgroundImage: `url('/src/assets/rohini.webp')` }}
+            ></div>
           </div>
           <div className="flex-1 min-w-0">
             <h4 className="font-display font-bold text-card-foreground text-sm sm:text-base group-hover:gradient-text transition-all duration-300">{name}</h4>
