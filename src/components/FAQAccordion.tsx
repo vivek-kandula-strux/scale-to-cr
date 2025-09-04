@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: "Do you guarantee results?",
-    answer: "Yes! We guarantee a minimum 3x ROI within 90 days, or we'll work for free until you achieve it. Our proven frameworks and data-driven approach have helped over 500+ businesses scale successfully."
+    answer: "Yes! We guarantee a minimum 3x ROI within 90 days, or we'll work for free until you achieve it. Our proven frameworks and data-driven approach have helped over 300+ businesses scale successfully."
   },
   {
     question: "How long before I see results?",

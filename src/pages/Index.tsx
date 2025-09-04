@@ -60,13 +60,13 @@ const Index = () => {
     <>
       <Helmet>
         <title>Scale to ₹1CR/Month | Proven Growth Systems | Strux Digital</title>
-        <meta name="description" content="Transform your coaching or consulting business with our proven framework. Join 500+ clients who've scaled to ₹1CR/month with our data-driven growth systems. Free consultation available." />
+        <meta name="description" content="Transform your coaching or consulting business with our proven framework. Join 300+ clients who've scaled to ₹1CR/month with our data-driven growth systems. Free consultation available." />
         <meta name="keywords" content="business scaling, digital marketing, performance marketing, business growth, coaching business, consulting growth, ₹1 crore revenue" />
         <meta property="og:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
-        <meta property="og:description" content="Join 500+ coaches and consultants who've transformed their revenue using our proven growth systems. Get your custom roadmap to predictable scaling." />
+        <meta property="og:description" content="Join 300+ coaches and consultants who've transformed their revenue using our proven growth systems. Get your custom roadmap to predictable scaling." />
         <meta property="og:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
         <meta name="twitter:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
-        <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 500+ success stories. Free consultation available." />
+        <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 300+ success stories. Free consultation available." />
         <meta name="twitter:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
         <link rel="canonical" href="/" />
       </Helmet>
@@ -102,7 +102,7 @@ const Index = () => {
             <div className="relative max-w-full">
               <img 
                 src={heroClientLogos} 
-                alt="Hero Client Logo Collage showcasing 500+ successful clients of Strux Digital"
+                alt="Hero Client Logo Collage showcasing 300+ successful clients of Strux Digital"
                 width="1200"
                 height="600" 
                 className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
@@ -120,6 +120,65 @@ const Index = () => {
               <Button variant="hero" size="xl" onClick={handleCtaClick} className="w-full max-w-md sm:w-auto min-h-[56px] text-base sm:text-lg font-bold px-8">
                 Get My Custom Growth Plan
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* By The Numbers Section - Credibility Metrics */}
+      <section className="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 relative bg-gradient-subtle">
+        <div className="absolute inset-0 bg-gradient-card opacity-50"></div>
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-10 sm:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-foreground mb-3 sm:mb-4 animate-fade-in">
+              By The <span className="gradient-text">Numbers</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up" style={{
+              animationDelay: '0.1s'
+            }}>
+              Our proven track record speaks for itself. Here's what 5+ years of marketing excellence looks like.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="text-center glass-card p-6 sm:p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-fade-in" style={{
+              animationDelay: '0.2s'
+            }}>
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">5+</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Years Experience</div>
+            </div>
+            
+            <div className="text-center glass-card p-6 sm:p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-fade-in" style={{
+              animationDelay: '0.3s'
+            }}>
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">300+</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Businesses Served</div>
+            </div>
+            
+            <div className="text-center glass-card p-6 sm:p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-fade-in" style={{
+              animationDelay: '0.4s'
+            }}>
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">4.2x</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Average Return</div>
+            </div>
+            
+            <div className="text-center glass-card p-6 sm:p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-fade-in" style={{
+              animationDelay: '0.5s'
+            }}>
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                <DollarSign className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-2xl sm:text-3xl font-display font-bold text-primary mb-2">₹50+ Cr</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Total Ad Spend</div>
             </div>
           </div>
         </div>
@@ -227,7 +286,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <BenefitCard icon={Award} title="Proven Track Record" description="We've helped 200+ businesses achieve sustainable growth with our battle-tested strategies." />
+            <BenefitCard icon={Award} title="Proven Track Record" description="We've helped 300+ businesses achieve sustainable growth with our battle-tested strategies." />
             <BenefitCard icon={Clock} title="Rapid Implementation" description="See results in 90 days or less with our fast-track growth acceleration programs." />
             <BenefitCard icon={DollarSign} title="ROI Guarantee" description="We're so confident in our approach, we guarantee a 3:1 return on your investment within 6 months." />
             <BenefitCard icon={Users} title="Dedicated Team" description="Your own dedicated team of growth specialists working exclusively on your success." />
