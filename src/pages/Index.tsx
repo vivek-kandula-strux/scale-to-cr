@@ -60,13 +60,13 @@ const Index = () => {
     <>
       <Helmet>
         <title>Scale to ₹1CR/Month | Proven Growth Systems | Strux Digital</title>
-        <meta name="description" content="Transform your coaching or consulting business with our proven framework. Join 300+ clients who've scaled to ₹1CR/month with our data-driven growth systems. Free consultation available." />
+        <meta name="description" content="Transform your coaching or consulting business with our proven framework. Join 60+ coaches and edtechs who've scaled to ₹1CR/month with our data-driven growth systems. Free consultation available." />
         <meta name="keywords" content="business scaling, digital marketing, performance marketing, business growth, coaching business, consulting growth, ₹1 crore revenue" />
         <meta property="og:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
-        <meta property="og:description" content="Join 300+ coaches and consultants who've transformed their revenue using our proven growth systems. Get your custom roadmap to predictable scaling." />
+        <meta property="og:description" content="Join 60+ coaches and edtechs who've transformed their revenue using our proven growth systems. Get your custom roadmap to predictable scaling." />
         <meta property="og:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
         <meta name="twitter:title" content="Scale Your Business to ₹1 CR/Month - Strux Digital" />
-        <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 300+ success stories. Free consultation available." />
+        <meta name="twitter:description" content="Proven growth systems for coaches and consultants. 60+ success stories. Free consultation available." />
         <meta name="twitter:image" content="https://okoooexnwtkdebpkfsku.supabase.co/storage/v1/object/public/landing-page-assets/SD%20Logo.webp" />
         <link rel="canonical" href="/" />
       </Helmet>
@@ -102,7 +102,7 @@ const Index = () => {
             <div className="relative max-w-full">
               <img 
                 src={heroClientLogos} 
-                alt="Hero Client Logo Collage showcasing 300+ successful clients of Strux Digital"
+                alt="Hero Client Logo Collage showcasing 60+ successful coaches and edtechs with Strux Digital"
                 width="1200"
                 height="600" 
                 className="rounded-2xl shadow-elevated w-full max-w-[calc(100vw-2rem)] sm:max-w-[calc(100vw-3rem)] md:max-w-[90vw] lg:max-w-[85vw] xl:max-w-[80vw] object-cover hover:scale-105 transition-transform duration-700"
@@ -157,8 +157,8 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">300+</div>
-              <div className="text-sm sm:text-base text-muted-foreground font-medium">Businesses Served</div>
+              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">60+</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-medium">Coaches & Edtechs</div>
             </div>
             
             <div className="text-center glass-card p-6 sm:p-8 rounded-2xl hover:scale-105 transition-transform duration-300 animate-fade-in" style={{
@@ -167,7 +167,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">4.2x</div>
+              <div className="text-3xl sm:text-4xl font-display font-bold text-primary mb-2">3.1x</div>
               <div className="text-sm sm:text-base text-muted-foreground font-medium">Average Return</div>
             </div>
             
@@ -177,7 +177,7 @@ const Index = () => {
               <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="w-8 h-8 text-white" />
               </div>
-              <div className="text-2xl sm:text-3xl font-display font-bold text-primary mb-2">₹50+ Cr</div>
+              <div className="text-2xl sm:text-3xl font-display font-bold text-primary mb-2">₹75+ Cr</div>
               <div className="text-sm sm:text-base text-muted-foreground font-medium">Total Ad Spend</div>
             </div>
           </div>
@@ -286,7 +286,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <BenefitCard icon={Award} title="Proven Track Record" description="We've helped 300+ businesses achieve sustainable growth with our battle-tested strategies." />
+            <BenefitCard icon={Award} title="Proven Track Record" description="We've helped 60+ coaches and edtechs achieve sustainable growth with our battle-tested strategies." />
             <BenefitCard icon={Clock} title="Rapid Implementation" description="See results in 90 days or less with our fast-track growth acceleration programs." />
             <BenefitCard icon={DollarSign} title="ROI Guarantee" description="We're so confident in our approach, we guarantee a 3:1 return on your investment within 6 months." />
             <BenefitCard icon={Users} title="Dedicated Team" description="Your own dedicated team of growth specialists working exclusively on your success." />
